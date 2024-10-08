@@ -36,6 +36,6 @@ bun start
 bun run build
 ```
 
-## Dependencies
+## Compiler
 
-- hamlet-builder: ^1.0.4
+- [Hamlet Builder](https://github.com/zkreations/hamlet-builder)
