@@ -1,0 +1,9 @@
+<b:if cond="!data:view.isLayoutMode">
+  <b:skin version='{{version}}'><![CDATA[
+    {{asset '/dist/css/main.min.css'}}
+  ]]></b:skin>
+<b:else/>
+   <b:template-skin><![CDATA[
+    {{asset '/dist/css/admin.min.css'}}
+  ]]></b:template-skin>
+</b:if>

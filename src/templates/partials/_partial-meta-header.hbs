@@ -1,0 +1,82 @@
+  <b:if cond='!data:view.isError'>
+    {{!-- [ Browser data, description and keyword ] --}}
+    <link expr:href='data:blog.url.canonical' rel='canonical'/>
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription.escaped' name='description'/>
+      <b:elseif cond='data:view.isSingleItem'/>
+      <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='description'/>
+      <b:else/>
+      <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='description'/>
+    </b:if>
+    <meta expr:content='data:blog.title.escaped + &quot;, &quot; + data:blog.pageName.escaped + &quot;' name='keywords'/>
+    <b:tag cond='data:view.isPost' expr:href='resizeImage(data:blog.postImageUrl, 0)' name='link' rel='image_src'/>
+
+    {{!-- [ Generator and rrs ] --}}
+    <meta content='blogger' name='generator'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; Atom&quot;' rel='alternate' type='application/atom+xml'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; Feed&quot;' rel='alternate' type='application/rss+xml'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/comments/default?alt=rss&quot;' expr:title='data:blog.title + &quot; Comments Feed&quot;' rel='alternate' type='application/rss+xml'/>
+
+    {{!-- [ Theme Color ] --}}
+    <meta expr:content='data:skin.vars.themeColor' name='theme-color'/>
+    <meta expr:content='data:skin.vars.themeColor' name='msapplication-navbutton-color'/>
+    <meta expr:content='data:skin.vars.themeColor' name='apple-mobile-web-app-status-bar-style'/>
+    <meta expr:content='yes' name='apple-mobile-web-app-capable'/>
+
+    {{!-- [ Favicon ] --}}
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='120x120'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='152x152'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='shortcut icon' type='image/x-icon'/>
+
+    {{!-- [ Open graph ] --}}
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:title'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+    <b:if cond='data:view.isMultipleItems'>
+      <meta content='website' property='og:type'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>
+        <b:else/>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' property='og:description'/>
+      </b:if>
+      <b:else/>
+      <meta content='article' property='og:type'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>
+        <b:else/>
+        <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' property='og:description'/>
+      </b:if>
+    </b:if>
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:image:alt'/>
+    <b:if cond='data:blog.postImageUrl'>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' property='og:image'/>
+      <b:else/>
+      <meta content='Add_your_image_url_here' property='og:image'/>
+    </b:if>
+
+    {{!-- [ Twitter Card ] --}}
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:title'/>
+    <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
+    <b:if cond='data:view.isMultipleItems'>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>
+        <b:else/>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='twitter:description'/>
+      </b:if>
+      <b:else/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>
+        <b:else/>
+        <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='twitter:description'/>
+      </b:if>
+    </b:if>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:image:alt'/>
+    <b:if cond='data:blog.postImageUrl'>
+      <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' name='twitter:image:src'/>
+      <b:else/>
+      <meta content='Add_your_image_url_here' name='twitter:image:src'/>
+    </b:if>
+
+  </b:if>

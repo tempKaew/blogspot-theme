@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='1.3.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' b:js='false'>
+  &lt;head&gt;
+    <meta expr:charset='data:blog.encoding'/>
+    <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+
+    <title><data:view.title.escaped/></title>
+
+    <b:if cond='!data:view.isError'>
+        <link expr:href='data:blog.url.canonical' rel='canonical'/>
+        <b:if cond='data:blog.metaDescription'>
+          <meta expr:content='data:blog.metaDescription.escaped' name='description'/>
+          <b:elseif cond='data:view.isSingleItem'/>
+          <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='description'/>
+          <b:else/>
+          <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='description'/>
+        </b:if>
+        <meta expr:content='data:blog.title.escaped + &quot;, &quot; + data:blog.pageName.escaped + &quot;' name='keywords'/>
+        <b:tag cond='data:view.isPost' expr:href='resizeImage(data:blog.postImageUrl, 0)' name='link' rel='image_src'/>
+    
+        <meta content='blogger' name='generator'/>
+        <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; Atom&quot;' rel='alternate' type='application/atom+xml'/>
+        <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; Feed&quot;' rel='alternate' type='application/rss+xml'/>
+        <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/comments/default?alt=rss&quot;' expr:title='data:blog.title + &quot; Comments Feed&quot;' rel='alternate' type='application/rss+xml'/>
+    
+        <meta expr:content='data:skin.vars.themeColor' name='theme-color'/>
+        <meta expr:content='data:skin.vars.themeColor' name='msapplication-navbutton-color'/>
+        <meta expr:content='data:skin.vars.themeColor' name='apple-mobile-web-app-status-bar-style'/>
+        <meta expr:content='yes' name='apple-mobile-web-app-capable'/>
+    
+        <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='120x120'/>
+        <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='152x152'/>
+        <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+        <link expr:href='data:blog.blogspotFaviconUrl' rel='shortcut icon' type='image/x-icon'/>
+    
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:title'/>
+        <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+        <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+        <b:if cond='data:view.isMultipleItems'>
+          <meta content='website' property='og:type'/>
+          <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>
+            <b:else/>
+            <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' property='og:description'/>
+          </b:if>
+          <b:else/>
+          <meta content='article' property='og:type'/>
+          <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription.escaped' property='og:description'/>
+            <b:else/>
+            <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' property='og:description'/>
+          </b:if>
+        </b:if>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:image:alt'/>
+        <b:if cond='data:blog.postImageUrl'>
+          <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' property='og:image'/>
+          <b:else/>
+          <meta content='Add_your_image_url_here' property='og:image'/>
+        </b:if>
+    
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:title'/>
+        <meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
+        <b:if cond='data:view.isMultipleItems'>
+          <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>
+            <b:else/>
+            <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title' name='twitter:description'/>
+          </b:if>
+          <b:else/>
+          <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription.escaped' name='twitter:description'/>
+            <b:else/>
+            <meta expr:content='data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false }' name='twitter:description'/>
+          </b:if>
+        </b:if>
+        <meta content='summary_large_image' name='twitter:card'/>
+        <meta expr:content='data:blog.pageName.escaped ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:image:alt'/>
+        <b:if cond='data:blog.postImageUrl'>
+          <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' name='twitter:image:src'/>
+          <b:else/>
+          <meta content='Add_your_image_url_here' name='twitter:image:src'/>
+        </b:if>
+    
+      </b:if>
+
+    <b:if cond="!data:view.isLayoutMode">
+      <b:skin version='1.0.0'><![CDATA[
+        header{background-color:red}
+      ]]></b:skin>
+    <b:else/>
+       <b:template-skin><![CDATA[
+        body#layout{width:1025px;margin:0!important;padding:60px 0 0!important;border:0!important;text-align:left!important;position:relative}body#layout::before{content:"tempKaew";position:absolute;top:15px;right:15px;font-size:.8rem;font-family:Roboto,sans-serif;color:rgba(0,0,0,.52)}
+      ]]></b:template-skin>
+    </b:if>
+    <b:defaultmarkups>
+      <b:defaultmarkup type='All'>
+        <b:includable id='main'/>
+        <b:includable id='content'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='AdSense,Blog'>
+        <b:includable id='defaultAdUnit'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Blog,PopularPosts,FeaturedPost'>
+        <b:includable id='blogThisShare'/>
+        <b:includable id='bylineByName'/>
+        <b:includable id='bylineRegion'/>
+        <b:includable id='commentsLink'/>
+        <b:includable id='commentsLinkIframe'/>
+        <b:includable id='emailPostIcon'/>
+        <b:includable id='facebookShare'/>
+        <b:includable id='footerBylines'/>
+        <b:includable id='headerByline'/>
+        <b:includable id='googlePlusShare'/>
+        <b:includable id='linkShare'/>
+        <b:includable id='otherSharingButton'/>
+        <b:includable id='platformShare'/>
+        <b:includable id='postAuthor'/>
+        <b:includable id='postCommentsLink'/>
+        <b:includable id='postJumpLink'/>
+        <b:includable id='postLabels'/>
+        <b:includable id='postLocation'/>
+        <b:includable id='postReactions'/>
+        <b:includable id='postShareButtons'/>
+        <b:includable id='postTimestamp'/>
+        <b:includable id='sharingButton'/>
+        <b:includable id='sharingButtonContent'/>
+        <b:includable id='sharingButtons'/>
+        <b:includable id='sharingButtonsMenu'/>
+        <b:includable id='sharingPlatformIcon'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='PopularPosts,FeaturedPost'>
+        <b:includable id='snippetedPostByline'/>
+        <b:includable id='snippetedPostContent'/>
+        <b:includable id='snippetedPosts'/>
+        <b:includable id='snippetedPostThumbnail'/>
+        <b:includable id='snippetedPostTitle'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Blog'>
+        <b:includable id='aboutPostAuthor'/>
+        <b:includable id='addComments'/>
+        <b:includable id='commentAuthorAvatar'/>
+        <b:includable id='commentDeleteIcon'/>
+        <b:includable id='commentForm'/>
+        <b:includable id='commentFormIframeSrc'/>
+        <b:includable id='commentItem'/>
+        <b:includable id='commentList'/>
+        <b:includable id='commentPicker'/>
+        <b:includable id='comments'/>
+        <b:includable id='commentsTitle'/>
+        <b:includable id='feedLinks'/>
+        <b:includable id='feedLinksBody'/>
+        <b:includable id='homePageLink'/>
+        <b:includable id='iframeComments'/>
+        <b:includable id='inlineAd'/>
+        <b:includable id='manageComments'/>
+        <b:includable id='nextPageLink'/>
+        <b:includable id='post'/>
+        <b:includable id='postBody'/>
+        <b:includable id='postBodySnippet'/>
+        <b:includable id='postCommentsAndAd'/>
+        <b:includable id='postFooter'/>
+        <b:includable id='postFooterAuthorProfile'/>
+        <b:includable id='postHeader'/>
+        <b:includable id='postMeta'/>
+        <b:includable id='postMetadataJSONImage'/>
+        <b:includable id='postMetadataJSONPublisher'/>
+        <b:includable id='postPagination'/>
+        <b:includable id='postTitle'/>
+        <b:includable id='previousPageLink'/>
+        <b:includable id='threadedCommentForm'/>
+        <b:includable id='threadedCommentJs'/>
+        <b:includable id='threadedComments'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='BlogArchive'>
+        <b:includable id='flat'/>
+        <b:includable id='hierarchy'/>
+        <b:includable id='interval'/>
+        <b:includable id='posts'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='BlogSearch'>
+        <b:includable id='searchForm'/>
+        <b:includable id='searchSubmit'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Header'>
+        <b:includable id='behindImageStyle'/>
+        <b:includable id='description'/>
+        <b:includable id='image'/>
+        <b:includable id='title'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Label'>
+        <b:includable id='cloud'/>
+        <b:includable id='list'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='PageList'>
+        <b:includable id='overflowButton'/>
+        <b:includable id='overflowablePageList'/>
+        <b:includable id='pageLink'/>
+        <b:includable id='pageList'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Profile'>
+        <b:includable id='authorProfileImage'/>
+        <b:includable id='defaultProfileImage'/>
+        <b:includable id='profileImage'/>
+        <b:includable id='teamProfile'/>
+        <b:includable id='teamProfileLink'/>
+        <b:includable id='userGoogleProfile'/>
+        <b:includable id='userLocation'/>
+        <b:includable id='userProfile'/>
+        <b:includable id='userProfileData'/>
+        <b:includable id='userProfileImage'/>
+        <b:includable id='userProfileInfo'/>
+        <b:includable id='userProfileLink'/>
+        <b:includable id='userProfileText'/>
+        <b:includable id='viewProfileLink'/>
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Subscribe'>
+        <b:includable id='feeds'/>
+      </b:defaultmarkup>
+    </b:defaultmarkups>
+
+  &lt;!--<head/>--&gt;&lt;/head&gt;
+
+  <body class='' id='mainContent'>
+    <b:if cond='data:view.isLayoutMode'>
+      <b:section id='main'/>
+    </b:if>
+
+    <b:tag class='mainWrapper' cond='!data:view.isError' name='div'>
+      <b:if cond='!data:view.isError'>
+        <header class='header' id='header'>
+          <div class='header-wrapper'>
+            test header
+          </div>
+        </header>
+      </b:if>
+    </b:tag>
+
+  &lt;!--</body>--&gt;&lt;/body&gt;
+</html>

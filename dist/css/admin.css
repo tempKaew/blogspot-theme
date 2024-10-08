@@ -1,0 +1,17 @@
+body#layout {
+  width: 1025px;
+  margin: 0 !important;
+  padding: 60px 0 0 !important;
+  border: 0 !important;
+  text-align: left !important;
+  position: relative;
+}
+body#layout::before {
+  content: "tempKaew";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.8rem;
+  font-family: Roboto, sans-serif;
+  color: rgba(0, 0, 0, 0.52);
+}

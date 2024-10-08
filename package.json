@@ -1,0 +1,21 @@
+{
+  "name": "blogspot-theme",
+  "version": "1.0.0",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "hamlet --mode production --watch",
+    "build": "hamlet --mode production"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "hamlet-builder": "^1.0.4"
+  },
+  "theme": {
+    "name": "tempKaew",
+    "version": "1.0.0",
+    "license": "MIT"
+  }
+}
