@@ -1,0 +1,28 @@
+<b:section id="content" class="container">
+  <b:widget id="HTML0" locked="true" title="Heroes" type="HTML" visible="true" cond="data:view.isHomepage">
+    <b:widget-settings>
+      <b:widget-setting name="content"><![CDATA[<h2>Exploring software development
+with PHP, JavaScript, Rust, and beyond.</h2>]]></b:widget-setting>
+    </b:widget-settings>
+    <b:includable id="main">
+      <data:content />
+    </b:includable>
+    {{! <b:includable id="content" /> }}
+  </b:widget>
+
+  <b:widget type="Blog" id="Blog1" locked="true">
+    <b:includable id="main">
+      <b:if cond="data:view.isPost or data:view.isPage">
+        <b:if cond="data:view.isPost">
+          {{> partial-post-detail}}
+        </b:if>
+        <b:if cond="data:view.isPage">
+          {{> partial-page}}
+        </b:if>
+      <b:else/>
+      {{> partial-post-item}}
+      </b:if>
+    </b:includable>
+    {{> includable-nextPrev}}
+  </b:widget>
+</b:section>

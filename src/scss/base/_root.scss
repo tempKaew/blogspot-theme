@@ -1,0 +1,62 @@
+:root {
+  --sidebar-width: 320px;
+  --container: 48rem;
+
+  --screen-tablet: 768px;
+
+  --font-bai: "Bai Jamjuree", "Adjusted Arial Fallback", ui-serif, Georgia,
+    Cambria, Times New Roman, Times, serif;
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  --color-primary: rgb(245, 245, 245);
+  --color-secondary: rgb(212, 212, 212);
+  --color-tertiary: rgb(115, 115, 115);
+  --color-link: rgb(255, 255, 255);
+  --color-code: rgb(171, 178, 191);
+
+  --bg-primary: rgb(10, 10, 10);
+  --bg-secondary: rgb(40, 44, 52);
+  --bg-code: rgb(40, 44, 52);
+}
+
+:root[data-theme="light"] {
+  --color-primary: rgb(10, 10, 10);
+  --color-secondary: rgb(64, 64, 64);
+  --color-tertiary: rgb(115, 115, 115);
+  --color-link: rgb(23, 23, 23);
+  --color-code: rgb(56, 58, 66);
+
+  --bg-primary: rgb(255, 255, 255);
+  --bg-secondary: rgb(250, 250, 250);
+  --bg-code: rgb(250, 250, 250);
+}
+
+$tablet: "only screen and (min-width: 768px)";
+
+@font-face {
+  font-family: "Adjusted Arial Fallback";
+  src: local(Arial);
+  size-adjust: 100%;
+  ascent-override: 94%;
+  descent-override: 13%;
+  line-gap-override: 6%;
+}
+
+body {
+  font-family: var(--font-title-family);
+  background-color: var(--bg-primary);
+  color: var(--color-secondary);
+  line-height: 1.75em;
+}
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  &:-webkit-any-link {
+    cursor: pointer;
+  }
+}
+button {
+  cursor: pointer;
+}

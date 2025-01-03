@@ -1,7 +1,17 @@
 <b:if cond="!data:view.isLayoutMode">
   <b:skin version='{{version}}'><![CDATA[
+    /*
+    {{> Font}}
+    */
+    {{> css-variables}}
     {{asset '/dist/css/main.min.css'}}
   ]]></b:skin>
+  <b:if cond="data:view.isHomepage">
+    <style type='text/css'>{{asset '/dist/css/homepage.min.css'}}</style>
+  </b:if>
+  <b:if cond="data:view.isPost">
+    <style type='text/css'>{{asset '/dist/css/post.min.css'}}</style>
+  </b:if>
 <b:else/>
    <b:template-skin><![CDATA[
     {{asset '/dist/css/admin.min.css'}}

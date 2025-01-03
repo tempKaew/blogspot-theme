@@ -1,0 +1,39 @@
+.mainWrapper {
+  display: grid;
+  grid-template-areas: "header" "container" "footer";
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+  header {
+    grid-area: header;
+  }
+  #main-header {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 2rem 0;
+    align-items: center;
+    #Header1 {
+      h1 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+      }
+    }
+    #LinkList0 {
+      justify-self: end;
+      width: 100%;
+      .main-menu-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+        place-items: center;
+      }
+    }
+  }
+  .container {
+    grid-area: container;
+    padding: 4rem 0;
+  }
+  footer {
+    grid-area: footer;
+  }
+}

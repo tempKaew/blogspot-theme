@@ -1,0 +1,85 @@
+$transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-duration: 0.5s;
+$button-size: 40px;
+$icon-size: 24px;
+$hover-light: rgba(0, 0, 0, 0.1);
+$hover-dark: rgba(255, 255, 255, 0.1);
+
+// Theme Toggle Button
+#toggle-theme {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  width: $button-size;
+  height: $button-size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .toggle-icon {
+    width: $icon-size;
+    height: $icon-size;
+    color: #000;
+    transition: transform $transition-duration $transition-timing;
+  }
+
+  .sun {
+    transform-origin: center;
+    transition: transform $transition-duration $transition-timing;
+  }
+
+  .sun-beams {
+    transform-origin: center;
+    transition: transform $transition-duration $transition-timing;
+
+    line {
+      stroke-width: 2px;
+      stroke-linecap: round;
+      transition: transform $transition-duration $transition-timing,
+        opacity $transition-duration $transition-timing;
+    }
+  }
+
+  .moon {
+    transform-origin: center;
+    transition: transform $transition-duration $transition-timing;
+  }
+}
+
+[data-theme="dark"] {
+  #toggle-theme {
+    &:hover {
+      background-color: $hover-dark;
+    }
+
+    .toggle-icon {
+      color: #fff;
+      transform: rotate(360deg);
+    }
+
+    .sun {
+      transform: scale(1.75);
+    }
+
+    .sun-beams {
+      transform: rotateZ(45deg);
+      opacity: 0;
+    }
+
+    .moon > circle {
+      transform: translateX(-7px);
+    }
+  }
+}

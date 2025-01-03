@@ -1,0 +1,14 @@
+<b:with value="data:posts" var="posts">
+  <b:loop index="i" values="data:posts" var="post">
+    <article class="post">
+      <h1 class="card-title">
+        <b:eval
+          expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
+        />
+      </h1>
+      <div class="content">
+        <data:post.body />
+      </div>
+    </article>
+  </b:loop>
+</b:with>

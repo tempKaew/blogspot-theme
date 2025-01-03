@@ -1,0 +1,49 @@
+@import "../base/variables";
+.mainWrapper {
+  #HTML0 {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    min-height: 18rem;
+    @media #{$tablet} {
+      min-height: 9rem;
+    }
+    h2,
+    h3 {
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    h2 {
+      font-size: 3rem;
+      color: var(--color-primary);
+    }
+    h3 {
+      font-size: 2rem;
+      color: var(--color-secondary);
+    }
+    p {
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+    }
+  }
+  #Blog1 {
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      min-height: 1.875rem;
+    }
+    .posts {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      .post {
+        min-height: 8.75rem;
+        @media #{$tablet} {
+          min-height: 7rem;
+        }
+      }
+    }
+  }
+}

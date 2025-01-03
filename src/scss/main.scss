@@ -1,1 +1,6 @@
-@import "components/layout";
+@import "base/reset";
+@import "base/root";
+@import "base/layout";
+
+@import "components/posts";
+@import "components/theme-toggle";

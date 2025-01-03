@@ -1,3 +1,195 @@
-<div class='header-wrapper'>
-  test header
-</div>
+<header>
+  <b:section
+    id="main-header"
+    class="main-header"
+    cond="!data:view.isLayoutMode"
+    maxwidgets="2"
+    name="Header Menu"
+    showaddelement="false"
+  >
+    <b:widget
+      id="Header1"
+      locked="true"
+      title="tempKAEW (ส่วนหัว)"
+      type="Header"
+      version="2"
+      visible="true"
+    >
+      <b:widget-settings>
+        <b:widget-setting name="displayUrl" />
+        <b:widget-setting name="displayHeight">0</b:widget-setting>
+        <b:widget-setting name="sectionWidth">-1</b:widget-setting>
+        <b:widget-setting name="useImage">false</b:widget-setting>
+        <b:widget-setting name="shrinkToFit">false</b:widget-setting>
+        <b:widget-setting name="imagePlacement">BEHIND</b:widget-setting>
+        <b:widget-setting name="displayWidth">0</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id="main" var="this">
+        <b:include
+          cond="data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}"
+          name="image"
+        />
+        <b:include
+          cond="data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}"
+          name="title"
+        />
+        <b:include
+          cond="data:imagePlacement != &quot;REPLACE&quot;"
+          name="description"
+        />
+        <b:include
+          cond="data:imagePlacement == &quot;BEHIND&quot;"
+          name="behindImageStyle"
+        />
+      </b:includable>
+      <b:includable id="behindImageStyle">
+        <b:if cond="data:sourceUrl">
+          <b:include
+            cond="data:this.image"
+            data="{image: data:this.image, selector: &quot;.Header&quot;}"
+            name="responsiveImageStyle"
+          />
+        </b:if>
+      </b:includable>
+      <b:includable id="description">
+        <b:if cond="data:this.description">
+          <div class="headerDesc hidden"><data:this.description /></div>
+        </b:if>
+      </b:includable>
+      <b:includable id="image">
+        <a expr:href="data:blog.homepageUrl.canonical"><img
+            expr:alt="data:title"
+            expr:src="resizeImage(data:sourceUrl, 300)"
+            expr:title="data:title"
+          /></a>
+        <b:include
+          cond="data:this.imagePlacement == &quot;REPLACE&quot;"
+          name="title"
+        />
+      </b:includable>
+      <b:includable id="title">
+        <b:class
+          cond="data:this.imagePlacement == &quot;REPLACE&quot;"
+          name="replaced"
+        />
+
+        <b:tag
+          expr:name="!data:view.isSingleItem ? &quot;h1&quot; : &quot;h2&quot;"
+        >
+          <b:tag
+            class="headerTitle"
+            expr:name="!data:view.isHomepage ? &quot;a&quot; : &quot;span&quot;"
+          >
+            <b:attr
+              cond="!data:view.isHomepage"
+              expr:value="data:blog.homepageUrl.canonical"
+              name="href"
+            />
+            <data:title />
+          </b:tag>
+        </b:tag>
+      </b:includable>
+    </b:widget>
+
+    <b:widget
+      id="LinkList0"
+      locked="true"
+      title="Navigation Menu"
+      type="LinkList"
+      version="2"
+      visible="true"
+    >
+      <b:widget-settings>
+        <b:widget-setting name="sorting">NONE</b:widget-setting>
+
+        <b:widget-setting name="text-0">Menu 1</b:widget-setting>
+        <b:widget-setting name="link-0">#</b:widget-setting>
+
+        <b:widget-setting name="text-1">Menu 2</b:widget-setting>
+        <b:widget-setting name="link-1">#</b:widget-setting>
+
+        <b:widget-setting name="text-2">Menu 3</b:widget-setting>
+        <b:widget-setting name="link-2">#</b:widget-setting>
+
+      </b:widget-settings>
+      <b:includable id="main">
+        <b:include name="content" />
+      </b:includable>
+      <b:includable id="content">
+        <ul
+          class="main-menu-list"
+          itemscope="itemscope"
+          itemtype="https://schema.org/SiteNavigationElement"
+        >
+          <b:if cond="!data:view.isHomepage">
+            <li>
+              <a
+                class="link"
+                expr:href="data:blog.homepageUrl.canonical"
+                itemprop="url"
+              >
+                <span class="name" itemprop="name"><data:messages.home /></span>
+              </a>
+            </li>
+          </b:if>
+
+          <b:loop values="data:links" var="link">
+            <b:if cond="data:link.name == &quot;BreakLine&quot;">
+              <li class="break" />
+              <b:else />
+              <li>
+                <a class="link" expr:href="data:link.target" itemprop="url">
+                  <span class="name" itemprop="name"><data:link.name /></span>
+                </a>
+              </li>
+            </b:if>
+          </b:loop>
+          <li>
+            <button
+              aria-label="Switch to light mode"
+              title="Toggles mode color"
+              id="toggle-theme"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="toggle-icon"
+              >
+                <mask class="moon" id="moon-mask">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="100%"
+                    height="100%"
+                    fill="white"
+                  ></rect>
+                  <circle cx="24" cy="10" r="6" fill="black"></circle>
+                </mask>
+                <circle
+                  class="sun"
+                  cx="12"
+                  cy="12"
+                  r="6"
+                  mask="url(#moon-mask)"
+                  fill="currentColor"
+                ></circle>
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </g>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</header>

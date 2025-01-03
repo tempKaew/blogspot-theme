@@ -1,0 +1,24 @@
+<h2>Recent posts</h2>
+<div class="posts">
+  <b:with
+    value="data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts"
+    var="posts"
+  >
+    <b:loop index="i" values="data:posts" var="post">
+      <article class="post">
+        <a expr:href="data:post.url">
+          <h3 class="card-title">
+            <b:eval
+              expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
+            />
+          </h3>
+        </a>
+        <div class="post-excerpt">
+          <data:post.snippets.short />
+        </div>
+        <data:post.date />
+      </article>
+    </b:loop>
+  </b:with>
+</div>
+<b:include name="nextPrev" />
