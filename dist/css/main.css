@@ -208,7 +208,7 @@ video {
   --color-tertiary: rgb(115, 115, 115);
   --color-link: rgb(255, 255, 255);
   --color-code: rgb(171, 178, 191);
-  --bg-primary: rgb(10, 10, 10);
+  --bg-primary: rgb(13, 17, 23);
   --bg-secondary: rgb(40, 44, 52);
   --bg-code: rgb(40, 44, 52);
 }
@@ -263,34 +263,173 @@ button {
 }
 .mainWrapper #main-header {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1fr;
   padding: 2rem 0;
   align-items: center;
 }
-.mainWrapper #main-header #Header1 h1 {
+@media only screen and (min-width: 768px) {
+  .mainWrapper #main-header {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+.mainWrapper #main-header #Header1 {
+  grid-column: 1/2;
+}
+.mainWrapper #main-header #Header1 h1,
+.mainWrapper #main-header #Header1 h2 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
 }
 .mainWrapper #main-header #LinkList0 {
-  justify-self: end;
+  grid-column: 1/3;
+  grid-row: 2/3;
   width: 100%;
 }
+@media only screen and (min-width: 768px) {
+  .mainWrapper #main-header #LinkList0 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+}
 .mainWrapper #main-header #LinkList0 .main-menu-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+  display: none;
+  gap: 1rem;
   place-items: center;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #main-header #LinkList0 .main-menu-list {
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: row;
+  }
+}
+.mainWrapper #main-header #LinkList0 #toggle-menu:checked + .main-menu-list {
+  display: flex;
+}
+.mainWrapper #main-header #HTML1 {
+  grid-column: 2/3;
+  place-self: end;
+  display: flex;
+  gap: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #main-header #HTML1 {
+    grid-column: 3/4;
+  }
+}
+.mainWrapper #main-header #HTML1 .toggle-menu {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #main-header #HTML1 .toggle-menu {
+    display: none;
+  }
 }
 .mainWrapper .container {
   grid-area: container;
-  padding: 4rem 0;
+  padding: 2rem 0;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper .container {
+    padding: 4rem 0;
+  }
 }
 .mainWrapper footer {
   grid-area: footer;
 }
+.mainWrapper footer #LinkList1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.875rem;
+}
+.mainWrapper footer #LinkList1 .main-menu-list {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+}
+.header-search .btn {
+  cursor: pointer;
+  padding: 0.5em;
+}
+.header-search .modal-state {
+  display: none;
+}
+.header-search .modal-state:checked + #form-search {
+  opacity: 1;
+  visibility: visible;
+}
+.header-search #form-search {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.header-search #form-search .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+.header-search #form-search .inner {
+  transition: top 0.25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 2rem);
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media only screen and (min-width: 768px) {
+  .header-search #form-search .inner {
+    width: 50%;
+    padding: 1em 2em;
+  }
+}
+.header-search #form-search form {
+  display: inline-flex;
+  align-items: center;
+}
+.header-search #form-search form input {
+  width: 100%;
+  color: var(--color-tertiary);
+}
+.header-search #form-search form button {
+  padding: 0 10px;
+}
+.header-search #form-search form label {
+  margin-left: 10px;
+  cursor: pointer;
+}
 
 .card-title {
   font-family: var(--font-title-family);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 #toggle-theme {

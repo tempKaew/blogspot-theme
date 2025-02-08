@@ -11,6 +11,7 @@
     <title><data:view.title.escaped/></title>
 
     {{> partial-meta-header}}
+    {{> partial-schema}}
 
     {{> skin}}
     {{!-- Default markups --}}
@@ -23,7 +24,15 @@
         {{/each}}
       </b:defaultmarkup>
       {{/each}}
+      <b:defaultmarkup type='Common'>
+        {{> includable-icon3Line}}
+        {{> includable-iconSearch}}
+        {{> includable-iconClose}}
+        {{> includable-nextPrev}}
+      </b:defaultmarkup>
     </b:defaultmarkups>
+
+    {{> partial-hljs-highlight}}
 
   {{!-- </head> Close --}}
   &lt;!--<head/>--&gt;&lt;/head&gt;

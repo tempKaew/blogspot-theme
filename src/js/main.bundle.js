@@ -1,20 +1,33 @@
-const toggleButton = document.getElementById("toggle-theme");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("toggle-theme");
+  const body = document.body;
 
-function updateAriaLabel() {
-  const isLightMode =
-    document.firstElementChild.getAttribute("data-theme") === "light";
-  toggleButton.setAttribute(
-    "aria-label",
-    isLightMode ? "Switch to dark mode" : "Switch to light mode"
-  );
-}
+  function updateAriaLabel() {
+    const isLightMode =
+      document.firstElementChild.getAttribute("data-theme") === "light";
+    toggleButton.setAttribute(
+      "aria-label",
+      isLightMode ? "Switch to dark mode" : "Switch to light mode"
+    );
+  }
 
-toggleButton.addEventListener("click", () => {
-  const currentTheme = document.firstElementChild.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
-  document.firstElementChild.setAttribute("data-theme", newTheme);
+  toggleButton.addEventListener("click", () => {
+    const currentTheme = document.firstElementChild.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    document.firstElementChild.setAttribute("data-theme", newTheme);
+    updateAriaLabel();
+  });
+
   updateAriaLabel();
-});
 
-updateAriaLabel();
+  const modalCheckbox = document.getElementById("modal-search");
+  const searchInput = document.getElementById("searchInput");
+
+  modalCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+      setTimeout(() => {
+        searchInput.focus();
+      }, 10);
+    }
+  });
+});

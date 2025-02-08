@@ -27,23 +27,4 @@
       color: var(--color-secondary);
     }
   }
-  #Blog1 {
-    h2 {
-      font-size: 1.5rem;
-      line-height: 1.25;
-      margin-bottom: 1rem;
-      min-height: 1.875rem;
-    }
-    .posts {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      .post {
-        min-height: 8.75rem;
-        @media #{$tablet} {
-          min-height: 7rem;
-        }
-      }
-    }
-  }
 }

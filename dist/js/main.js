@@ -1,17 +1,28 @@
 (function () {
   'use strict';
 
-  const toggleButton = document.getElementById("toggle-theme");
-  function updateAriaLabel() {
-    const isLightMode = document.firstElementChild.getAttribute("data-theme") === "light";
-    toggleButton.setAttribute("aria-label", isLightMode ? "Switch to dark mode" : "Switch to light mode");
-  }
-  toggleButton.addEventListener("click", () => {
-    const currentTheme = document.firstElementChild.getAttribute("data-theme");
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    document.firstElementChild.setAttribute("data-theme", newTheme);
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-theme");
+    function updateAriaLabel() {
+      const isLightMode = document.firstElementChild.getAttribute("data-theme") === "light";
+      toggleButton.setAttribute("aria-label", isLightMode ? "Switch to dark mode" : "Switch to light mode");
+    }
+    toggleButton.addEventListener("click", () => {
+      const currentTheme = document.firstElementChild.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      document.firstElementChild.setAttribute("data-theme", newTheme);
+      updateAriaLabel();
+    });
     updateAriaLabel();
+    const modalCheckbox = document.getElementById("modal-search");
+    const searchInput = document.getElementById("searchInput");
+    modalCheckbox.addEventListener("change", function () {
+      if (this.checked) {
+        setTimeout(() => {
+          searchInput.focus();
+        }, 10);
+      }
+    });
   });
-  updateAriaLabel();
 
 })();

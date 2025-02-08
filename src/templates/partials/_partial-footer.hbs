@@ -1,3 +1,62 @@
 <footer id="footer">
-  footer
+  <b:section
+    id="main-footer"
+    cond="!data:view.isLayoutMode"
+    maxwidgets="2"
+    name="Footer Menu"
+    showaddelement="false"
+  >
+    <b:widget
+      id="LinkList1"
+      locked="true"
+      title="Navigation Menu"
+      type="LinkList"
+      version="2"
+      visible="true"
+    >
+      <b:widget-settings>
+        <b:widget-setting name="sorting">NONE</b:widget-setting>
+
+        <b:widget-setting name="text-0">Menu 1</b:widget-setting>
+        <b:widget-setting name="link-0">#</b:widget-setting>
+
+        <b:widget-setting name="text-1">Menu 2</b:widget-setting>
+        <b:widget-setting name="link-1">#</b:widget-setting>
+
+        <b:widget-setting name="text-2">Menu 3</b:widget-setting>
+        <b:widget-setting name="link-2">#</b:widget-setting>
+
+      </b:widget-settings>
+      <b:includable id="main">
+        <div>
+          &#169;
+          <span id="getYear"><script>/*<![CDATA[*/ var d = new Date(); var n =
+              d.getFullYear(); document.getElementById('getYear').innerHTML = n;
+              /*]]>*/</script></span>
+          &#8231;
+          <a expr:href="data:blog.homepageUrl.canonical"><data:blog.title
+            /></a>. All rights reserved.
+        </div>
+        <div>
+          <ul
+            class="main-menu-list"
+            itemscope="itemscope"
+            itemtype="https://schema.org/SiteNavigationElement"
+          >
+            <b:loop values="data:links" var="link">
+              <b:if cond="data:link.name == &quot;BreakLine&quot;">
+                <li class="break" />
+                <b:else />
+                <li>
+                  <a class="link" expr:href="data:link.target" itemprop="url">
+                    <span class="name" itemprop="name"><data:link.name /></span>
+                  </a>
+                </li>
+              </b:if>
+            </b:loop>
+          </ul>
+        </div>
+      </b:includable>
+    </b:widget>
+  </b:section>
 </footer>

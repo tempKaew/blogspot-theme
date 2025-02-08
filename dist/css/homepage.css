@@ -27,22 +27,3 @@
   font-size: 1.25rem;
   color: var(--color-secondary);
 }
-.mainWrapper #Blog1 h2 {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  min-height: 1.875rem;
-}
-.mainWrapper #Blog1 .posts {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.mainWrapper #Blog1 .posts .post {
-  min-height: 8.75rem;
-}
-@media only screen and (min-width: 768px) {
-  .mainWrapper #Blog1 .posts .post {
-    min-height: 7rem;
-  }
-}
