@@ -60,6 +60,18 @@
         &:last-child {
           margin-bottom: 0;
         }
+        &.relative {
+          position: relative;
+        }
+        .btn-copy-code {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
       ul {
         margin-bottom: 2rem;

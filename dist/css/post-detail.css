@@ -57,6 +57,18 @@
 #Blog1 .post .content pre:last-child {
   margin-bottom: 0;
 }
+#Blog1 .post .content pre.relative {
+  position: relative;
+}
+#Blog1 .post .content pre .btn-copy-code {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0.5;
+}
+#Blog1 .post .content pre .btn-copy-code:hover {
+  opacity: 1;
+}
 #Blog1 .post .content ul {
   margin-bottom: 2rem;
 }

@@ -81,13 +81,35 @@
   }
   footer {
     grid-area: footer;
+    margin-bottom: 1rem;
     #LinkList1 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       font-size: 0.875rem;
+      div:first-child {
+        order: 2;
+        text-align: center;
+      }
+      div:last-child {
+        order: 1;
+      }
+      @media #{$tablet} {
+        grid-template-columns: 1fr 1fr;
+        div:first-child {
+          order: 1;
+          text-align: left;
+        }
+        div:last-child {
+          order: 2;
+        }
+      }
       .main-menu-list {
         display: flex;
         gap: 1.25rem;
+        justify-content: center;
+        @media #{$tablet} {
+          justify-content: flex-end;
+        }
       }
     }
   }

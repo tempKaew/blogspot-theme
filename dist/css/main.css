@@ -340,15 +340,41 @@ button {
 }
 .mainWrapper footer {
   grid-area: footer;
+  margin-bottom: 1rem;
 }
 .mainWrapper footer #LinkList1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   font-size: 0.875rem;
+}
+.mainWrapper footer #LinkList1 div:first-child {
+  order: 2;
+  text-align: center;
+}
+.mainWrapper footer #LinkList1 div:last-child {
+  order: 1;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper footer #LinkList1 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mainWrapper footer #LinkList1 div:first-child {
+    order: 1;
+    text-align: left;
+  }
+  .mainWrapper footer #LinkList1 div:last-child {
+    order: 2;
+  }
 }
 .mainWrapper footer #LinkList1 .main-menu-list {
   display: flex;
   gap: 1.25rem;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper footer #LinkList1 .main-menu-list {
+    justify-content: flex-end;
+  }
 }
 
 .header-search {
