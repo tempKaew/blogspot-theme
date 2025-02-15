@@ -124,7 +124,7 @@
       property="og:image"
     />
     <b:else />
-    <meta content="Add_your_image_url_here" property="og:image" />
+    <meta expr:content="data:skin.vars.c_ogImage" property="og:image" />
   </b:if>
 
   {{! [ Twitter Card ] }}
@@ -169,7 +169,7 @@
       name="twitter:image:src"
     />
     <b:else />
-    <meta content="Add_your_image_url_here" name="twitter:image:src" />
+    <meta expr:content="data:skin.vars.c_ogImage" name="twitter:image:src" />
   </b:if>
 
   <link href="https://fonts.googleapis.com" rel="preconnect" />

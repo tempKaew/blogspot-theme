@@ -1,4 +1,15 @@
-<h2>Recent posts</h2>
+<h2>
+  <b:if cond="data:view.isSingleItem or data:view.isHomepage">
+    Recent posts
+    <b:elseif cond="data:view.isSearch" />
+    <b:if cond="data:view.search.label">
+      <b:eval expr='"Articles tag : " + data:view.search.label.escaped' />
+      <b:elseif cond="data:view.search.query" />
+      <b:eval expr='"ผลการค้นหา : " + data:view.search.query.escaped' />
+      <b:else />
+    </b:if>
+  </b:if>
+</h2>
 <div class="posts">
   <b:with
     value="data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts"

@@ -13,24 +13,13 @@
     {{> partial-meta-header}}
     {{> partial-schema}}
 
-    {{> skin}}
-    {{!-- Default markups --}}
-    <b:defaultmarkups>
-      {{!-- Clean all inclusions of all widgets automatically  --}}
-      {{#each defaultmarkups}}
-      <b:defaultmarkup type='{{@key}}'>
-        {{#each this}}
-        <b:includable id='{{this}}'/>
-        {{/each}}
-      </b:defaultmarkup>
-      {{/each}}
-      <b:defaultmarkup type='Common'>
-        {{> includable-icon3Line}}
-        {{> includable-iconSearch}}
-        {{> includable-iconClose}}
-        {{> includable-nextPrev}}
-      </b:defaultmarkup>
-    </b:defaultmarkups>
+    <b:if cond="!data:view.isLayoutMode">
+      {{> skin}}
+    <b:else/>
+      {{> template-skin}}
+    </b:if>
+
+    {{> defaultmarkups}}
 
     {{> partial-hljs-highlight}}
 

@@ -1,0 +1,17 @@
+<b:skin version='{{version}}'><![CDATA[
+    /*
+    {{> Font}}
+    {{> setting-general}}
+    */
+    {{> css-variables}}
+    {{asset '/dist/css/main.min.css'}}
+    ]]></b:skin>
+<b:if cond="data:view.isHomepage">
+    <style type='text/css'>{{asset '/dist/css/homepage.min.css'}}</style>
+</b:if>
+<b:if cond="data:view.isHomepage or data:view.isSearch">
+    <style type='text/css'>{{asset '/dist/css/post-list.min.css'}}</style>
+</b:if>
+<b:if cond="data:view.isPost">
+    <style type='text/css'>/*<![CDATA[*/{{asset '/dist/css/post-detail.min.css'}}/*]]>*/</style>
+</b:if>

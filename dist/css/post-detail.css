@@ -1,13 +1,21 @@
 #Blog1 {
   max-width: 100%;
 }
+#Blog1 .post header {
+  margin-bottom: 2rem;
+}
+#Blog1 .post header .labels {
+  display: flex;
+  gap: 0.625rem;
+}
 #Blog1 .post header .labels .label {
-  padding: 1px 0.5rem;
-  color: var(--color-secondary);
-  background-color: var(--bg-secondary);
+  color: rgb(172, 220, 121);
+  background-color: rgb(26, 40, 11);
   border-radius: 1rem;
-  margin-right: 0.625rem;
   font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgb(51, 80, 21);
 }
 #Blog1 .post header h1 {
   color: var(--color-primary);
