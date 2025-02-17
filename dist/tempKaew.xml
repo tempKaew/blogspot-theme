@@ -788,11 +788,7 @@
       </b:if>
     </b:tag>
 
-    <script type='text/javascript'>
-      /*<![CDATA[*/
-      !function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const t=document.getElementById("toggle-theme");function e(){const e="light"===document.firstElementChild.getAttribute("data-theme");t.setAttribute("aria-label",e?"Switch to dark mode":"Switch to light mode")}t.addEventListener("click",(()=>{const t="light"===document.firstElementChild.getAttribute("data-theme")?"dark":"light";document.firstElementChild.setAttribute("data-theme",t),e()})),e();const n=document.getElementById("modal-search"),d=document.getElementById("searchInput");n.addEventListener("change",(function(){this.checked&&setTimeout((()=>{d.focus()}),10)}))}))}();
-      /*]]>*/
-    </script>
+    <script type='text/javascript'>/*<![CDATA[*/!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const t=document.getElementById("toggle-theme");function e(){const e="light"===document.firstElementChild.getAttribute("data-theme");t.setAttribute("aria-label",e?"Switch to dark mode":"Switch to light mode")}t.addEventListener("click",(()=>{const t="light"===document.firstElementChild.getAttribute("data-theme")?"dark":"light";document.firstElementChild.setAttribute("data-theme",t),e()})),e();const n=document.getElementById("modal-search"),d=document.getElementById("searchInput");n.addEventListener("change",(function(){this.checked&&setTimeout((()=>{d.focus()}),10)}))}))}();/*]]>*/</script>
 
   &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
