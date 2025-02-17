@@ -1,11 +1,11 @@
-@import "../base/variables";
+@use "../base/variables" as v;
 .mainWrapper {
   #HTML0 {
     display: grid;
     gap: 1rem;
     margin-bottom: 5rem;
     min-height: 18rem;
-    @media #{$tablet} {
+    @media #{v.$tablet} {
       min-height: 9rem;
     }
     h2,

@@ -11,7 +11,7 @@
     "@types/bun": "latest"
   },
   "dependencies": {
-    "hamlet-builder": "^1.0.4"
+    "hamlet-builder": "^1.0.20"
   },
   "theme": {
     "name": "tempKaew",

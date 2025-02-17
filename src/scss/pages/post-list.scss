@@ -1,4 +1,4 @@
-@import "../base/variables";
+@use "../base/variables" as v;
 .mainWrapper {
   #Blog1 {
     h2 {
@@ -13,7 +13,7 @@
       margin-bottom: 1rem;
       .post {
         min-height: 8.75rem;
-        @media #{$tablet} {
+        @media #{v.$tablet} {
           min-height: 7rem;
         }
       }

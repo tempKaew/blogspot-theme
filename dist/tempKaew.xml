@@ -439,11 +439,7 @@
     <b:if cond="data:view.isPost">
         <link href='https://unpkg.com/@highlightjs/cdn-assets@11.0.1/styles/atom-one-dark.min.css' rel='stylesheet'/>
         <script src='https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js'/>
-        <script type='text/javascript'>
-          /*<![CDATA[*/
-          !function(){"use strict";hljs.configure({cssSelector:"code"}),hljs.highlightAll(),hljs.addPlugin({"after:highlightElement":({el:e,text:t})=>{const n=e.parentElement;if(null==n)return;n.classList.add("relative");const i=document.createElement("button");i.classList.add("btn-copy-code");const l='<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"/></svg>';i.innerHTML=l,i.onclick=()=>{navigator.clipboard.writeText(t),i.innerHTML="Copied",setTimeout((()=>{i.innerHTML=l}),2e3)},n.appendChild(i)}})}();
-          /*]]>*/
-        </script>
+        <script type='text/javascript'>/*<![CDATA[*/!function(){"use strict";hljs.configure({cssSelector:"code"}),hljs.highlightAll(),hljs.addPlugin({"after:highlightElement":({el:e,text:t})=>{const n=e.parentElement;if(null==n)return;n.classList.add("relative");const i=document.createElement("button");i.classList.add("btn-copy-code");const l='<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"/></svg>';i.innerHTML=l,i.onclick=()=>{navigator.clipboard.writeText(t),i.innerHTML="Copied",setTimeout((()=>{i.innerHTML=l}),2e3)},n.appendChild(i)}})}();/*]]>*/</script>
     </b:if>
 
   &lt;!--<head/>--&gt;&lt;/head&gt;
