@@ -1,0 +1,61 @@
+<ol
+  class="breadcrumbs"
+  itemscope="itemscope"
+  itemtype="https://schema.org/BreadcrumbList"
+>
+  <b:class
+    cond="data:post.labels any (label =&gt; label.name in [&quot;Sponsored&quot; , &quot;Advertorial&quot;])"
+    name="sponsored"
+  />
+  <li
+    class="homeLink"
+    itemprop="itemListElement"
+    itemscope="itemscope"
+    itemtype="https://schema.org/ListItem"
+  >
+    <a expr:href="data:blog.homepageUrl.canonical" itemprop="item">
+      <span itemprop="name"><data:messages.home /></span>
+    </a>
+    <meta content="1" itemprop="position" />
+  </li>
+  <b:if cond="data:post.labels">
+    <b:loop index="num" values="data:post.labels" var="label">
+      <b:if cond="data:num == 0">
+        <li
+          class="labelLink"
+          itemprop="itemListElement"
+          itemscope="itemscope"
+          itemtype="https://schema.org/ListItem"
+        >
+          <a expr:href="data:label.url.canonical" itemprop="item">
+            <span itemprop="name"><data:label.name /></span>
+          </a>
+          <meta expr:content="data:num+2" itemprop="position" />
+        </li>
+      </b:if>
+      <b:if
+        cond="data:num == 1 and data:post.labels none (label =&gt; label.name in [&quot;Sponsored&quot; , &quot;Advertorial&quot; , &quot;Product&quot; , &quot;Label_1&quot;])"
+      >
+        <li
+          class="labelLink"
+          itemprop="itemListElement"
+          itemscope="itemscope"
+          itemtype="https://schema.org/ListItem"
+        >
+          <a expr:href="data:label.url.canonical" itemprop="item">
+            <span itemprop="name"><data:label.name /></span>
+          </a>
+          <meta expr:content="data:num+2" itemprop="position" />
+        </li>
+      </b:if>
+    </b:loop>
+    <b:elseif cond="data:view.isPost" />
+    <li class="labelLink noLabel"><data:messages.posts /></li>
+  </b:if>
+  <b:tag
+    class="titleLink"
+    cond="data:view.isPage"
+    expr:data-text="data:post.title"
+    name="li"
+  />
+</ol>

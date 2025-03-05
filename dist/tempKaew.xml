@@ -211,7 +211,7 @@
           <style type='text/css'>.mainWrapper #Blog1 h2{font-size:1.5rem;line-height:1.25;margin-bottom:1rem;min-height:1.875rem}.mainWrapper #Blog1 .posts{display:grid;gap:1rem;margin-bottom:1rem}.mainWrapper #Blog1 .posts .post{min-height:8.75rem}@media only screen and (min-width:768px){.mainWrapper #Blog1 .posts .post{min-height:7rem}}.mainWrapper #Blog1 .blog-pager:has(span){display:inline-flex;justify-content:space-around;width:100%;align-items:center;margin-top:2rem}</style>
       </b:if>
       <b:if cond="data:view.isPost">
-          <style type='text/css'>/*<![CDATA[*/#Blog1{max-width:100%}#Blog1 .post header{margin-bottom:2rem}#Blog1 .post header .labels{display:flex;gap:.625rem;margin-bottom:.625rem}#Blog1 .post header .labels .label{color:#acdc79;background-color:#1a280b;border-radius:1rem;font-size:.875rem;line-height:1.25rem;padding:.25rem .75rem;border:1px solid #335015}#Blog1 .post header h1{color:var(--color-primary);font-size:2.25rem;line-height:1.25;font-weight:700}#Blog1 .post header .post-meta{font-size:.875rem;color:var(--color-secondary)}#Blog1 .post .content{font-size:1.125rem}#Blog1 .post .content h1,#Blog1 .post .content h2,#Blog1 .post .content h3,#Blog1 .post .content h4,#Blog1 .post .content h5{padding-top:1.5rem}#Blog1 .post .content h2{color:var(--color-primary);font-size:1.6666667em;margin-bottom:1.0666667em;line-height:1.3333333}#Blog1 .post .content h3{color:var(--color-primary);font-size:1.3333333em;margin-bottom:.6666667em;line-height:1.5}#Blog1 .post .content p{margin-bottom:2rem}#Blog1 .post .content p:last-child{margin-bottom:0}#Blog1 .post .content pre{color:var(--color-code);white-space:pre-wrap;word-wrap:break-word;background-color:var(--bg-code);overflow-x:auto;padding:1rem .5rem;border-radius:8px;margin:2rem 0;max-width:calc(100vw - 2rem);width:100%}#Blog1 .post .content pre:last-child{margin-bottom:0}#Blog1 .post .content pre.relative{position:relative}#Blog1 .post .content pre:hover .btn-copy-code{opacity:.5}#Blog1 .post .content pre .btn-copy-code{position:absolute;top:.5rem;right:.5rem;opacity:.1}#Blog1 .post .content pre .btn-copy-code:hover{opacity:1}#Blog1 .post .content ul{margin-bottom:2rem}#Blog1 .post .content ul:last-child{margin-bottom:0}#Blog1 .post .content a{text-decoration:underline;font-weight:500;text-underline-offset:2px}#Blog1 .post .content code{font-family:"JetBrains Mono",serif;font-optical-sizing:auto;font-weight:400;font-style:normal;font-size:.8888889em}#toc{display:none}@media only screen and (min-width:768px){#toc{display:block;position:absolute;left:calc((100% - 48rem)/ 2 + 48rem);min-height:100vh;top:0}}#toc #toc-content{position:sticky;top:0;max-width:230px;border-radius:1rem;padding-top:1rem}#toc #toc-content h3{border-top-left-radius:1rem;border-top-right-radius:1rem;border:1px solid var(--bg-code);border-bottom:none;padding:.75rem 1rem;font-weight:700}#toc #toc-content ul{border:1px solid var(--bg-code);border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;padding:1rem;list-style:initial;padding-left:2rem}#toc #toc-content ul li{opacity:.6}#toc #toc-content ul li:hover{opacity:1}#toc #toc-content ul ul{font-size:.875rem;margin-left:1rem;list-style-type:circle;padding:0;border:none}#toc #toc-content ul ul li{opacity:.8}#toc #toc-content ul ul li:hover{opacity:1}/*]]>*/</style>
+          <style type='text/css'>/*<![CDATA[*/#Blog1{max-width:100%}#Blog1 .post header{margin-bottom:2rem}#Blog1 .post header .breadcrumbs{display:inline-flex;gap:1rem;margin-bottom:.625rem}#Blog1 .post header .breadcrumbs li:not(:last-child)::after{content:"/";margin-left:.5rem;font-size:90%;opacity:.7}#Blog1 .post header .breadcrumbs a{color:var(--color-tertiary)}#Blog1 .post header h1{color:var(--color-primary);font-size:2.25rem;line-height:1.25;font-weight:700}#Blog1 .post header .post-meta{font-size:.875rem;color:var(--color-secondary)}#Blog1 .post .content{font-size:1.125rem}#Blog1 .post .content h1,#Blog1 .post .content h2,#Blog1 .post .content h3,#Blog1 .post .content h4,#Blog1 .post .content h5{padding-top:1.5rem}#Blog1 .post .content h2{color:var(--color-primary);font-size:1.6666667em;margin-bottom:1.0666667em;line-height:1.3333333}#Blog1 .post .content h3{color:var(--color-primary);font-size:1.3333333em;margin-bottom:.6666667em;line-height:1.5}#Blog1 .post .content p{margin-bottom:2rem}#Blog1 .post .content p:last-child{margin-bottom:0}#Blog1 .post .content pre{color:var(--color-code);white-space:pre-wrap;word-wrap:break-word;background-color:var(--bg-code);overflow-x:auto;padding:1rem .5rem;border-radius:8px;margin:2rem 0;max-width:calc(100vw - 2rem);width:100%}#Blog1 .post .content pre:last-child{margin-bottom:0}#Blog1 .post .content pre.relative{position:relative}#Blog1 .post .content pre:hover .btn-copy-code{opacity:.5}#Blog1 .post .content pre .btn-copy-code{position:absolute;top:.5rem;right:.5rem;opacity:.1}#Blog1 .post .content pre .btn-copy-code:hover{opacity:1}#Blog1 .post .content ul{margin-bottom:2rem}#Blog1 .post .content ul:last-child{margin-bottom:0}#Blog1 .post .content a{text-decoration:underline;font-weight:500;text-underline-offset:2px}#Blog1 .post .content code{font-family:"JetBrains Mono",serif;font-optical-sizing:auto;font-weight:400;font-style:normal;font-size:.8888889em}#toc{display:none}@media only screen and (min-width:768px){#toc{display:block;position:absolute;left:calc((100% - 48rem)/ 2 + 48rem);min-height:100vh;top:0}}#toc #toc-content{position:sticky;top:0;max-width:230px;border-radius:1rem;padding-top:1rem}#toc #toc-content h3{border-top-left-radius:1rem;border-top-right-radius:1rem;border:1px solid var(--bg-code);border-bottom:none;padding:.75rem 1rem;font-weight:700}#toc #toc-content ul{border:1px solid var(--bg-code);border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;padding:1rem;list-style:initial;padding-left:2rem}#toc #toc-content ul li{opacity:.6}#toc #toc-content ul li:hover{opacity:1}#toc #toc-content ul ul{font-size:.875rem;margin-left:1rem;list-style-type:circle;padding:0;border:none}#toc #toc-content ul ul li{opacity:.8}#toc #toc-content ul ul li:hover{opacity:1}/*]]>*/</style>
       </b:if>
     <b:else/>
       <b:template-skin><![CDATA[
@@ -677,15 +677,58 @@
                       <article class="post">
                   
                         <header>
-                          <b:if cond="data:post.labels">
-                            <div class="labels">
-                              <b:loop values="data:post.labels" var="label">
-                                <a expr:href="data:label.url" class="label" rel="tag">
-                                  <data:label.name />
-                                </a>
+                  
+                          <ol
+                            class="breadcrumbs"
+                            itemscope="itemscope"
+                            itemtype="https://schema.org/BreadcrumbList"
+                          >
+                            <b:class cond="data:post.labels any (label =&gt; label.name in [&quot;Sponsored&quot; , &quot;Advertorial&quot;])" name="sponsored" />
+                            <li
+                              class="homeLink"
+                              itemprop="itemListElement"
+                              itemscope="itemscope"
+                              itemtype="https://schema.org/ListItem"
+                            >
+                              <a expr:href="data:blog.homepageUrl.canonical" itemprop="item">
+                                <span itemprop="name"><data:messages.home /></span>
+                              </a>
+                              <meta content="1" itemprop="position" />
+                            </li>
+                            <b:if cond="data:post.labels">
+                              <b:loop index="num" values="data:post.labels" var="label">
+                                <b:if cond="data:num == 0">
+                                  <li
+                                    class="labelLink"
+                                    itemprop="itemListElement"
+                                    itemscope="itemscope"
+                                    itemtype="https://schema.org/ListItem"
+                                  >
+                                    <a expr:href="data:label.url.canonical" itemprop="item">
+                                      <span itemprop="name"><data:label.name /></span>
+                                    </a>
+                                    <meta expr:content="data:num+2" itemprop="position" />
+                                  </li>
+                                </b:if>
+                                <b:if cond="data:num == 1 and data:post.labels none (label =&gt; label.name in [&quot;Sponsored&quot; , &quot;Advertorial&quot; , &quot;Product&quot; , &quot;Label_1&quot;])" >
+                                  <li
+                                    class="labelLink"
+                                    itemprop="itemListElement"
+                                    itemscope="itemscope"
+                                    itemtype="https://schema.org/ListItem"
+                                  >
+                                    <a expr:href="data:label.url.canonical" itemprop="item">
+                                      <span itemprop="name"><data:label.name /></span>
+                                    </a>
+                                    <meta expr:content="data:num+2" itemprop="position" />
+                                  </li>
+                                </b:if>
                               </b:loop>
-                            </div>
-                          </b:if>
+                              <b:elseif cond="data:view.isPost" />
+                              <li class="labelLink noLabel"><data:messages.posts /></li>
+                            </b:if>
+                            <b:tag class="titleLink" cond="data:view.isPage" expr:data-text="data:post.title" name="li" />
+                          </ol>
                   
                           <h1 class="card-title">
                             <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' />
@@ -698,6 +741,11 @@
                         <div class="content">
                           <data:post.body />
                         </div>
+                  
+                        <div class="post-related">
+                          <script type="text/javascript">/*<![CDATA[*//*]]>*/</script>
+                        </div>
+                  
                       </article>
                     </b:loop>
                   </b:with>

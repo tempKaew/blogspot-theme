@@ -3,15 +3,8 @@
     <article class="post">
 
       <header>
-        <b:if cond="data:post.labels">
-          <div class="labels">
-            <b:loop values="data:post.labels" var="label">
-              <a expr:href="data:label.url" class="label" rel="tag">
-                <data:label.name />
-              </a>
-            </b:loop>
-          </div>
-        </b:if>
+
+        {{> partial-breadcrumbs}}
 
         <h1 class="card-title">
           <b:eval
@@ -26,6 +19,13 @@
       <div class="content">
         <data:post.body />
       </div>
+
+      <div class="post-related">
+        <script type="text/javascript">/*<![CDATA[*/{{asset
+            "dist/js/related_post.min.js"
+          }}/*]]>*/</script>
+      </div>
+
     </article>
   </b:loop>
 </b:with>
