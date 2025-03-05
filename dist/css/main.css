@@ -232,6 +232,10 @@ video {
   descent-override: 13%;
   line-gap-override: 6%;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-title-family);
   background-color: var(--bg-primary);

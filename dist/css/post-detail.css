@@ -7,6 +7,7 @@
 #Blog1 .post header .labels {
   display: flex;
   gap: 0.625rem;
+  margin-bottom: 0.625rem;
 }
 #Blog1 .post header .labels .label {
   color: rgb(172, 220, 121);
@@ -30,17 +31,22 @@
 #Blog1 .post .content {
   font-size: 1.125rem;
 }
+#Blog1 .post .content h1,
+#Blog1 .post .content h2,
+#Blog1 .post .content h3,
+#Blog1 .post .content h4,
+#Blog1 .post .content h5 {
+  padding-top: 1.5rem;
+}
 #Blog1 .post .content h2 {
   color: var(--color-primary);
   font-size: 1.6666667em;
-  margin-top: 1.8666667em;
   margin-bottom: 1.0666667em;
   line-height: 1.3333333;
 }
 #Blog1 .post .content h3 {
   color: var(--color-primary);
   font-size: 1.3333333em;
-  margin-top: 1.6666667em;
   margin-bottom: 0.6666667em;
   line-height: 1.5;
 }
@@ -68,11 +74,14 @@
 #Blog1 .post .content pre.relative {
   position: relative;
 }
+#Blog1 .post .content pre:hover .btn-copy-code {
+  opacity: 0.5;
+}
 #Blog1 .post .content pre .btn-copy-code {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  opacity: 0.5;
+  opacity: 0.1;
 }
 #Blog1 .post .content pre .btn-copy-code:hover {
   opacity: 1;
@@ -94,4 +103,59 @@
   font-weight: 400;
   font-style: normal;
   font-size: 0.8888889em;
+}
+
+#toc {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #toc {
+    display: block;
+    position: absolute;
+    left: calc((100% - 48rem) / 2 + 48rem);
+    min-height: 100vh;
+    top: 0;
+  }
+}
+#toc #toc-content {
+  position: sticky;
+  top: 0;
+  max-width: 230px;
+  border-radius: 1rem;
+  padding-top: 1rem;
+}
+#toc #toc-content h3 {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border: 1px solid var(--bg-code);
+  border-bottom: none;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+#toc #toc-content ul {
+  border: 1px solid var(--bg-code);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+  list-style: initial;
+  padding-left: 2rem;
+}
+#toc #toc-content ul li {
+  opacity: 0.6;
+}
+#toc #toc-content ul li:hover {
+  opacity: 1;
+}
+#toc #toc-content ul ul {
+  font-size: 0.875rem;
+  margin-left: 1rem;
+  list-style-type: circle;
+  padding: 0;
+  border: none;
+}
+#toc #toc-content ul ul li {
+  opacity: 0.8;
+}
+#toc #toc-content ul ul li:hover {
+  opacity: 1;
 }

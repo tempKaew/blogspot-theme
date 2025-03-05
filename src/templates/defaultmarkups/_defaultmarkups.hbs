@@ -1,12 +1,6 @@
 <b:defaultmarkups>
-    {{!-- Clean all inclusions of all widgets automatically  --}}
-  {{#each defaultmarkups}}
-    <b:defaultmarkup type='{{@key}}'>
-    {{#each this}}
-      <b:includable id='{{this}}'/>
-    {{/each}}
-    </b:defaultmarkup>
-  {{/each}}
+  {{> super.defaultmarkups}}
+  {{> super.image}}
 
   <b:defaultmarkup type='Common'>
     {{> includable-icon3Line}}

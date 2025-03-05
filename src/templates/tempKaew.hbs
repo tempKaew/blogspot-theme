@@ -11,7 +11,6 @@
     <title><data:view.title.escaped/></title>
 
     {{> partial-meta-header}}
-    {{> partial-schema}}
 
     <b:if cond="!data:view.isLayoutMode">
       {{> skin}}
@@ -29,7 +28,7 @@
   {{!-- <body> open ] --}}
   <body class='' id='mainContent'>
 
-    <b:tag class='mainWrapper' cond='!data:view.isError' name='div'>
+    <b:tag class='mainWrapper' id='mainWrapper' cond='!data:view.isError' name='div'>
       <b:if cond='!data:view.isError'>
         {{!-- [ Header section ] --}}
         {{> partial-header}}
@@ -45,6 +44,9 @@
     </b:tag>
 
     <script type='text/javascript'>/*<![CDATA[*/{{asset "dist/js/main.min.js"}}/*]]>*/</script>
+    <b:if cond="data:view.isPost">
+      <script type='text/javascript'>/*<![CDATA[*/{{asset "dist/js/toc.min.js"}}/*]]>*/</script>
+    </b:if>
 
   {{!-- </body> close ] --}}
   &lt;!--</body>--&gt;&lt;/body&gt;
