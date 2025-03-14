@@ -1,5 +1,10 @@
 #Blog1 {
-  max-width: 100%;
+  max-width: calc(100vw - 2rem);
+}
+@media only screen and (min-width: 768px) {
+  #Blog1 {
+    max-width: 100%;
+  }
 }
 #Blog1 .post header {
   margin-bottom: 2rem;
@@ -103,6 +108,22 @@
   font-weight: 400;
   font-style: normal;
   font-size: 0.8888889em;
+}
+#Blog1 #blogger-related-posts {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(115, 115, 115, 0.31);
+  padding-top: 1rem;
+}
+#Blog1 #blogger-related-posts h4 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+#Blog1 #blogger-related-posts ul {
+  list-style: circle;
+  margin-left: 1.25rem;
 }
 
 #toc {

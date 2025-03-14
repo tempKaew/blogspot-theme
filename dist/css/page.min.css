@@ -1,1 +1,1 @@
-#Blog1{max-width:100%}
+#Blog1{max-width:calc(100vw - 2rem)}@media only screen and (min-width:768px){#Blog1{max-width:100%}}

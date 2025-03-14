@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.firstElementChild.getAttribute("data-theme") === "light";
     toggleButton.setAttribute(
       "aria-label",
-      isLightMode ? "Switch to dark mode" : "Switch to light mode"
+      isLightMode ? "Switch to dark mode" : "Switch to light mode",
     );
   }
 

@@ -1,6 +1,9 @@
 @use "../base/variables" as v;
 #Blog1 {
-  max-width: 100%;
+  max-width: calc(100vw - 2rem);
+  @media #{v.$tablet} {
+    max-width: 100%;
+  }
   .post {
     header {
       margin-bottom: 2rem;
@@ -106,6 +109,22 @@
         font-style: normal;
         font-size: 0.8888889em;
       }
+    }
+  }
+  #blogger-related-posts {
+    margin-top: 2rem;
+    border-top: 1px solid rgb(115 115 115 / 31%);
+    padding-top: 1rem;
+    h4 {
+      color: var(--color-primary);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: circle;
+      margin-left: 1.25rem;
     }
   }
 }

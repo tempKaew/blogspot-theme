@@ -86,6 +86,7 @@
       display: grid;
       grid-template-columns: 1fr;
       font-size: 0.875rem;
+      color: var(--color-white);
       div:first-child {
         order: 2;
         text-align: center;
