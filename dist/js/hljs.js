@@ -3,13 +3,25 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const script = document.createElement("script");
-    script.src = "https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js";
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js";
     script.onload = () => {
       hljs.configure({
         cssSelector: "code"
       });
-      hljs.highlightAll();
+      // hljs.highlightAll();
+
+      if (hljs.addPlugin) {
+        console.log("has addPlugin");
+      } else {
+        console.log("not has addPlugin");
+      }
       hljs.addPlugin({
+        "before:highlight": ({
+          code,
+          language
+        }) => {
+          console.log("before:highlight");
+        },
         "after:highlightElement": ({
           el,
           text
@@ -33,6 +45,7 @@
           wrapper.appendChild(copyButton);
         }
       });
+      hljs.highlightAll();
     };
     document.head.appendChild(script);
   });

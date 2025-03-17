@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const script = document.createElement("script");
   script.src =
-    "https://unpkg.com/@highlightjs/cdn-assets@11.0.1/highlight.min.js";
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js";
   script.onload = () => {
     hljs.configure({ cssSelector: "code" });
-    hljs.highlightAll();
     hljs.addPlugin({
       "after:highlightElement": ({ el, text }) => {
         const wrapper = el.parentElement;
@@ -28,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         wrapper.appendChild(copyButton);
       },
     });
+    hljs.highlightAll();
   };
   document.head.appendChild(script);
 });
