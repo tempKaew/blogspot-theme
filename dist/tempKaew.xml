@@ -170,6 +170,16 @@
         <meta expr:content="data:skin.vars.c_ogImage" name="twitter:image:src" />
       </b:if>
     
+      <link href="//fonts.gstatic.com" rel="dns-prefetch" />
+      <link href="//1.bp.blogspot.com" rel="dns-prefetch" />
+      <link href="//2.bp.blogspot.com" rel="dns-prefetch" />
+      <link href="//3.bp.blogspot.com" rel="dns-prefetch" />
+      <link href="//4.bp.blogspot.com" rel="dns-prefetch" />
+      <link href="//www.blogger.com" rel="dns-prefetch" />
+      <link href="//dnjs.cloudflare.com" rel="dns-prefetch" />
+      <link href="//pagead2.googlesyndication.com" rel="dns-prefetch" />
+      <link href="//www.googletagmanager.com" rel="dns-prefetch" />
+      <link href="//www.google-analytics.com" rel="dns-prefetch" />
       <link href="https://fonts.googleapis.com" rel="preconnect" />
       <link
         crossorigin="anonymous"
@@ -214,7 +224,7 @@
           </Group>
           <Variable
             name="c.ogImage" description="c.ogImage" type="string"
-            value="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwIh5buOLyGGdshlxnmZYMA_3glVZKRx9JR4Q0OtxDhmh0hQZXOjiTgbzYj_WAA7V5DOeEeX3LZA9i8k_LvUX0bGPMwiXYCxdkd-aCjWUkV2ZJtqohP1PjsrVvtQE6tkthqTQ_ixSovYs/s0/imacro-lazada-keeper.jpg"
+            value="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjk1mI9lGRCEuaMxAYwm1Vn7Lz_-XNJV6Q6cc1SMztIwZxzNfh-C7FBvpRc7yxfYlNrTDtTls31WOwnGNCIGXd-TqlFKq1_o74UwgsoHmFVjWlu7wEBwi_dfcVh6mLi73sAjyZ0Af2eym1XAj2CStQOqe2PGNaIlXnWVbyOcKxH2MQBEpmxfdMSD9IEc_0/s1200/tempKaew-og.webp"
           />
           */
           :root{--font-title: $(font.title); --font-title-family:$(font.title.family);--color-primary: rgb(245,245,245); --color-secondary:rgb(212,212,212); --color-tertiary: rgb(115,115,115); --color-link: rgb(255,255,255)}
@@ -471,7 +481,7 @@
 
     <b:if cond="data:view.isPost">
       <style type="text/css">/*<![CDATA[*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}/*]]>*/</style>
-      <script type="text/javascript">/*<![CDATA[*/!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const e=document.createElement("script");e.src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js",e.onload=()=>{hljs.configure({cssSelector:"code"}),hljs.addPlugin?console.log("has addPlugin"):console.log("not has addPlugin"),hljs.addPlugin({"before:highlight":({code:e,language:t})=>{console.log("before:highlight")},"after:highlightElement":({el:e,text:t})=>{const n=e.parentElement;if(null==n)return;n.classList.add("relative");const o=document.createElement("button");o.classList.add("btn-copy-code");const i='<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"/></svg>';o.innerHTML=i,o.onclick=()=>{navigator.clipboard.writeText(t),o.innerHTML="Copied",setTimeout((()=>{o.innerHTML=i}),2e3)},n.appendChild(o)}}),hljs.highlightAll()},document.head.appendChild(e)}))}();/*]]>*/</script>
+      <script type="text/javascript">/*<![CDATA[*/!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){const e=document.createElement("script");e.src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js",e.onload=()=>{hljs.configure({cssSelector:"code"}),hljs.addPlugin({"after:highlightElement":({el:e,text:t})=>{const n=e.parentElement;if(null==n)return;n.classList.add("relative");const i=document.createElement("button");i.classList.add("btn-copy-code");const o='<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"/></svg>';i.innerHTML=o,i.onclick=()=>{navigator.clipboard.writeText(t),i.innerHTML="Copied",setTimeout((()=>{i.innerHTML=o}),2e3)},n.appendChild(i)}}),hljs.highlightAll()},document.head.appendChild(e)}))}();/*]]>*/</script>
     </b:if>
 
   &lt;!--<head/>--&gt;&lt;/head&gt;

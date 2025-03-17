@@ -3,25 +3,12 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js";
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js";
     script.onload = () => {
       hljs.configure({
         cssSelector: "code"
       });
-      // hljs.highlightAll();
-
-      if (hljs.addPlugin) {
-        console.log("has addPlugin");
-      } else {
-        console.log("not has addPlugin");
-      }
       hljs.addPlugin({
-        "before:highlight": ({
-          code,
-          language
-        }) => {
-          console.log("before:highlight");
-        },
         "after:highlightElement": ({
           el,
           text
