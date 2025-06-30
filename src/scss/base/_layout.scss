@@ -107,10 +107,37 @@
       }
       .main-menu-list {
         display: flex;
-        gap: 1.25rem;
+        gap: 0.5rem;
         justify-content: center;
         @media #{v.$tablet} {
           justify-content: flex-end;
+        }
+        &:hover {
+          li {
+            &:has(svg) {
+              background-color: #cccccc10;
+              svg {
+                stroke-opacity: 0.25;
+              }
+            }
+          }
+        }
+        li {
+          &:has(svg) {
+            transition: background-color 0.3s ease-in-out;
+            background-color: #cccccc24;
+            border-radius: 50%;
+            padding: 3px;
+            height: 30px;
+            width: 30px;
+            &:hover {
+              background-color: #cccccc40;
+              svg {
+                stroke-width: 1.5;
+                stroke-opacity: 1;
+              }
+            }
+          }
         }
       }
     }
