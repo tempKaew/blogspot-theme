@@ -341,6 +341,7 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .mainWrapper .container {
+    max-width: calc(var(--container) - 2rem);
     padding: 4rem 0;
   }
 }

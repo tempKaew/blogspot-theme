@@ -1,0 +1,79 @@
+.mainWrapper #Blog1 h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  min-height: 1.875rem;
+}
+.mainWrapper #Blog1 .posts {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.mainWrapper #Blog1 .posts:hover .post {
+  opacity: 0.75;
+}
+.mainWrapper #Blog1 .posts .post {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #Blog1 .posts .post {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+.mainWrapper #Blog1 .posts .post:hover {
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #Blog1 .posts .post:hover .post-image img {
+    transform: translateY(0);
+  }
+}
+.mainWrapper #Blog1 .posts .post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mainWrapper #Blog1 .posts .post-image {
+  flex: 1;
+  min-height: 188px;
+  height: 188px;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #Blog1 .posts .post-image {
+    flex: 1.25;
+    min-height: 210px;
+    height: 210px;
+    overflow: hidden;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper #Blog1 .posts .post-image img {
+    border-radius: 1rem 1rem 0 0;
+    transform: translateY(15px);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+.mainWrapper #Blog1 .posts .post-labels {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.mainWrapper #Blog1 .posts .post-labels .label {
+  background-color: var(--bg-secondary);
+  padding: 5px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.mainWrapper #Blog1 .blog-pager:has(span) {
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin-top: 2rem;
+}

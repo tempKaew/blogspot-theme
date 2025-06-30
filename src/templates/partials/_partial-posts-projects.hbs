@@ -1,0 +1,51 @@
+<h2>
+  Projects
+</h2>
+<div class="posts">
+  <b:with
+    value="data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts"
+    var="posts"
+  >
+    <b:loop index="i" values="data:posts" var="post">
+      <article class="post">
+        <div class="post-content">
+
+          <a expr:href="data:post.url">
+            <h3 class="card-title">
+              <b:eval
+                expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
+              />
+            </h3>
+          </a>
+
+          <div class="post-excerpt">
+            <data:post.snippets.short />
+          </div>
+
+          <div class="post-labels">
+            <b:loop index="i" values="data:post.labels" var="label">
+              <b:if cond='data:label.name != "projects"'>
+                <span class="label">
+                  <data:label.name />
+                </span>
+              </b:if>
+            </b:loop>
+          </div>
+
+        </div>
+        <div class="post-image">
+          <b:if cond="data:post.featuredImage">
+            <img
+              expr:src="data:post.featuredImage"
+              expr:alt="data:post.title.escaped"
+              loading="lazy"
+            />
+            <b:else />
+            no image
+          </b:if>
+        </div>
+      </article>
+    </b:loop>
+  </b:with>
+</div>
+<b:include name="nextPrev" />

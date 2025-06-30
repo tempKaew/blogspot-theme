@@ -76,6 +76,7 @@
     grid-area: container;
     padding: 2rem 0;
     @media #{v.$tablet} {
+      max-width: calc(var(--container) - 2rem);
       padding: 4rem 0;
     }
   }

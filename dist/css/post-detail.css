@@ -129,7 +129,7 @@
 #toc {
   display: none;
 }
-@media only screen and (min-width: 768px) {
+@media (min-width: 1228px) {
   #toc {
     display: block;
     position: absolute;

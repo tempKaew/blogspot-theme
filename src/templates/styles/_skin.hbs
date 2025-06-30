@@ -10,7 +10,11 @@
     <style type='text/css'>{{asset '/dist/css/homepage.min.css'}}</style>
 </b:if>
 <b:if cond="data:view.isHomepage or data:view.isSearch">
-    <style type='text/css'>{{asset '/dist/css/post-list.min.css'}}</style>
+    <b:if cond='data:view.search.label == "projects"'>
+        <style type='text/css'>{{asset '/dist/css/post-list-projects.min.css'}}</style>
+    <b:else/>
+        <style type='text/css'>{{asset '/dist/css/post-list.min.css'}}</style>
+    </b:if>
 </b:if>
 <b:if cond="data:view.isPost">
     <style type='text/css'>/*<![CDATA[*/{{asset '/dist/css/post-detail.min.css'}}/*]]>*/</style>

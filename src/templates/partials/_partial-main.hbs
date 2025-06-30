@@ -20,7 +20,11 @@ with PHP, JavaScript, Rust, and beyond.</h2>]]></b:widget-setting>
           {{> partial-page}}
         </b:if>
       <b:else/>
-      {{> partial-post-item}}
+        <b:if cond='data:view.search.label == "projects"'>
+          {{> partial-posts-projects}}
+        <b:else/>
+          {{> partial-post-item}}
+        </b:if>
       </b:if>
     </b:includable>
   </b:widget>
