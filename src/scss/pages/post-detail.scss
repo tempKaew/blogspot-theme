@@ -144,13 +144,28 @@
     max-width: 230px;
     border-radius: 1rem;
     padding-top: 1rem;
-    h3 {
+    #toc-header {
+      display: flex;
+      justify-content: space-between;
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
       border: 1px solid var(--bg-code);
       border-bottom: none;
       padding: 0.75rem 1rem;
-      font-weight: 700;
+      h3 {
+        font-weight: 700;
+      }
+      #to-top-button {
+        border: none;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: var(--color-secondary);
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
     ul {
       border: 1px solid var(--bg-code);

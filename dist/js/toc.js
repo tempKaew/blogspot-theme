@@ -27,9 +27,22 @@
     tocDiv.style.height = `${body.scrollHeight - topPosition}px`;
     const tocContentDiv = document.createElement("div");
     tocContentDiv.id = "toc-content";
+    const tocHeader = document.createElement("div");
+    tocHeader.id = "toc-header";
     const tocTitle = document.createElement("h3");
     tocTitle.textContent = "Table of Contents";
-    tocContentDiv.appendChild(tocTitle);
+    tocHeader.appendChild(tocTitle);
+    const toTopButton = document.createElement("button");
+    toTopButton.id = "to-top-button";
+    toTopButton.textContent = "^ top";
+    toTopButton.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+    tocHeader.appendChild(toTopButton);
+    tocContentDiv.appendChild(tocHeader);
     const tocUl = document.createElement("ul");
     tocContentDiv.appendChild(tocUl);
     let currentLi;

@@ -145,13 +145,28 @@
   border-radius: 1rem;
   padding-top: 1rem;
 }
-#toc #toc-content h3 {
+#toc #toc-content #toc-header {
+  display: flex;
+  justify-content: space-between;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   border: 1px solid var(--bg-code);
   border-bottom: none;
   padding: 0.75rem 1rem;
+}
+#toc #toc-content #toc-header h3 {
   font-weight: 700;
+}
+#toc #toc-content #toc-header #to-top-button {
+  border: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+}
+#toc #toc-content #toc-header #to-top-button:hover {
+  opacity: 1;
 }
 #toc #toc-content ul {
   border: 1px solid var(--bg-code);
