@@ -28,23 +28,21 @@
   {{!-- <body> open ] --}}
   <body class='' id='mainContent'>
 
-    <b:tag class='mainWrapper' id='mainWrapper' cond='!data:view.isError' name='div'>
-      <b:if cond='!data:view.isError'>
-        {{!-- [ Header section ] --}}
-        {{> partial-header}}
-      </b:if>
+    <b:tag class='mainWrapper' id='mainWrapper' name='div'>
+      {{!-- [ Header section ] --}}
+      {{> partial-header}}
 
       <b:if cond='!data:view.isError'>
         {{> partial-main}}
+      <b:else/>
+        {{> partial-error}}
       </b:if>
 
-      <b:if cond='!data:view.isError'>
-        {{> partial-footer}}
-      </b:if>
+      {{> partial-footer}}
     </b:tag>
 
     <script type='text/javascript'>/*<![CDATA[*/{{asset "dist/js/main.min.js"}}/*]]>*/</script>
-    <b:if cond="data:view.isPost">
+    <b:if cond="data:view.isPost or data:view.isPage">
       <script type='text/javascript'>/*<![CDATA[*/{{asset "dist/js/toc.min.js"}}/*]]>*/</script>
     </b:if>
 

@@ -3,9 +3,11 @@
   #Blog1 {
     h2 {
       font-size: 1.5rem;
+      font-weight: 600;
       line-height: 1.25;
       margin-bottom: 1rem;
       min-height: 1.875rem;
+      color: var(--color-white);
     }
     .posts {
       display: grid;
@@ -15,6 +17,44 @@
         min-height: 8.75rem;
         @media #{v.$tablet} {
           min-height: 7rem;
+        }
+        &-excerpt {
+          min-height: 5.25rem;
+          @media #{v.$tablet} {
+            min-height: 3.5rem;
+          }
+        }
+        &-meta {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          font-size: 0.875rem;
+          color: var(--color-tertiary);
+          svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 1.5;
+            stroke: var(--color-tertiary);
+          }
+        }
+        &-labels {
+          margin-left: 10px;
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          &-list {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            .label {
+              background-color: var(--bg-secondary);
+              padding: 3px 8px;
+              border-radius: 99px;
+              font-size: 0.75rem;
+              line-height: 1rem;
+            }
+          }
         }
       }
     }

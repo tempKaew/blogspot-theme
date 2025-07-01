@@ -16,6 +16,9 @@
         <style type='text/css'>{{asset '/dist/css/post-list.min.css'}}</style>
     </b:if>
 </b:if>
-<b:if cond="data:view.isPost">
+<b:if cond="data:view.isPost or data:view.isPage">
     <style type='text/css'>/*<![CDATA[*/{{asset '/dist/css/post-detail.min.css'}}/*]]>*/</style>
+</b:if>
+<b:if cond="data:view.isError">
+    <style type='text/css'>{{asset '/dist/css/error.min.css'}}</style>
 </b:if>

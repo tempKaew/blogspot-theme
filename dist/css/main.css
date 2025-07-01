@@ -291,6 +291,7 @@ button {
   grid-column: 1/3;
   grid-row: 2/3;
   width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 @media only screen and (min-width: 768px) {
   .mainWrapper #main-header #LinkList0 {
@@ -330,6 +331,9 @@ button {
 .mainWrapper #main-header #HTML1 .toggle-menu {
   display: block;
 }
+.mainWrapper #main-header #HTML1 .toggle-menu svg {
+  margin-top: 8px;
+}
 @media only screen and (min-width: 768px) {
   .mainWrapper #main-header #HTML1 .toggle-menu {
     display: none;
@@ -354,6 +358,7 @@ button {
   grid-template-columns: 1fr;
   font-size: 0.875rem;
   color: var(--color-white);
+  gap: 0.5rem;
 }
 .mainWrapper footer #LinkList1 div:first-child {
   order: 2;

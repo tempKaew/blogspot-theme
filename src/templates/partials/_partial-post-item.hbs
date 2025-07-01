@@ -7,6 +7,7 @@
       <b:elseif cond="data:view.search.query" />
       <b:eval expr='"ผลการค้นหา : " + data:view.search.query.escaped' />
       <b:else />
+      Blog
     </b:if>
   </b:if>
 </h2>
@@ -27,7 +28,26 @@
         <div class="post-excerpt">
           <data:post.snippets.short />
         </div>
-        <data:post.date />
+        <div class="post-meta">
+          <b:include name="iconCalendar" />
+          <span>
+            <data:post.date />
+          </span>
+          <b:if cond="data:post.labels">
+            <div class="post-labels">
+              <b:include name="iconTags" />
+              <div class="post-labels-list">
+                <b:loop index="i" values="data:post.labels" var="label">
+                  <b:if cond='data:label.name != "projects" and data:i lt 2'>
+                    <span class="label">
+                      <data:label.name />
+                    </span>
+                  </b:if>
+                </b:loop>
+              </div>
+            </div>
+          </b:if>
+        </div>
       </article>
     </b:loop>
   </b:with>
