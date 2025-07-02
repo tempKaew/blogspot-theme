@@ -24,10 +24,18 @@
         <b:widget-setting
           name="link-1"
         >https://github.com/tempKaew</b:widget-setting>
-        <b:widget-setting name="text-2">CodePen</b:widget-setting>
+        <b:widget-setting name="text-2">LinkedIn</b:widget-setting>
         <b:widget-setting
           name="link-2"
+        >https://www.linkedin.com/in/tempkaew</b:widget-setting>
+        <b:widget-setting name="text-3">CodePen</b:widget-setting>
+        <b:widget-setting
+          name="link-3"
         >https://codepen.io/tempKaew</b:widget-setting>
+        <b:widget-setting name="text-4">LeetCode</b:widget-setting>
+        <b:widget-setting
+          name="link-4"
+        >https://leetcode.com/u/tempkaew/</b:widget-setting>
       </b:widget-settings>
       <b:includable id="main">
         <div>
@@ -53,7 +61,7 @@
                     expr:href="data:link.target"
                     itemprop="url"
                     target="_blank"
-                    title="{{data:link.name}}"
+                    expr:title="data:link.name"
                   >
                     <b:if cond="data:link.name == &quot;FacebookPage&quot;">
                       <b:include name="iconFacebook" />
@@ -63,6 +71,12 @@
                     </b:if>
                     <b:if cond="data:link.name == &quot;CodePen&quot;">
                       <b:include name="iconCodePen" />
+                    </b:if>
+                    <b:if cond="data:link.name == &quot;LinkedIn&quot;">
+                      <b:include name="iconLinkedIn" />
+                    </b:if>
+                    <b:if cond="data:link.name == &quot;LeetCode&quot;">
+                      <b:include name="iconLeetCode" />
                     </b:if>
                   </a>
                 </li>

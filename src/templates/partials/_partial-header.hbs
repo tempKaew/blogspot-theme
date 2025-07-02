@@ -101,18 +101,25 @@
     >
       <b:widget-settings>
         <b:widget-setting name="sorting">NONE</b:widget-setting>
-        <b:widget-setting name="text-2">Blog</b:widget-setting>
-        <b:widget-setting
-          name="link-2"
-        >https://tempkaew.blogspot.com/search?max-results=8</b:widget-setting>
-        <b:widget-setting name="text-1">Projects</b:widget-setting>
-        <b:widget-setting
-          name="link-1"
-        >https://tempkaew.blogspot.com/search/label/projects</b:widget-setting>
         <b:widget-setting name="text-0">About</b:widget-setting>
         <b:widget-setting
           name="link-0"
         >https://tempkaew.blogspot.com/p/about.html</b:widget-setting>
+
+        <b:widget-setting name="text-1">Projects</b:widget-setting>
+        <b:widget-setting
+          name="link-1"
+        >https://tempkaew.blogspot.com/search/label/projects</b:widget-setting>
+
+        <b:widget-setting name="text-2">Blog</b:widget-setting>
+        <b:widget-setting
+          name="link-2"
+        >https://tempkaew.blogspot.com/search?max-results=8</b:widget-setting>
+
+        <b:widget-setting name="text-3">Learn with me</b:widget-setting>
+        <b:widget-setting
+          name="link-3"
+        >https://tempkaew.blogspot.com/p/learn-with-me.html</b:widget-setting>
 
       </b:widget-settings>
       <b:includable id="main">
@@ -130,6 +137,7 @@
               <a
                 class="link"
                 expr:href="data:blog.homepageUrl.canonical"
+                expr:title="data:messages.home"
                 itemprop="url"
               >
                 <span class="name" itemprop="name"><data:messages.home /></span>
@@ -142,7 +150,12 @@
               <li class="break" />
               <b:else />
               <li>
-                <a class="link" expr:href="data:link.target" itemprop="url">
+                <a
+                  class="link"
+                  expr:href="data:link.target"
+                  expr:title="data:link.name"
+                  itemprop="url"
+                >
                   <span class="name" itemprop="name"><data:link.name /></span>
                 </a>
               </li>

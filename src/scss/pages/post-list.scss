@@ -13,10 +13,19 @@
       display: grid;
       gap: 1rem;
       margin-bottom: 1rem;
+      &:hover {
+        .post {
+          opacity: 0.5;
+        }
+      }
       .post {
+        transition: opacity 0.3s ease-in-out;
         min-height: 8.75rem;
         @media #{v.$tablet} {
           min-height: 7rem;
+        }
+        &:hover {
+          opacity: 1;
         }
         &-excerpt {
           min-height: 5.25rem;
@@ -64,6 +73,14 @@
       width: 100%;
       align-items: center;
       margin-top: 2rem;
+      span {
+        a {
+          color: var(--color-secondary);
+          &:hover {
+            color: var(--color-white);
+          }
+        }
+      }
     }
   }
 }

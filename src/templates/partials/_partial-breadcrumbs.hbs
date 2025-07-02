@@ -13,7 +13,11 @@
     itemscope="itemscope"
     itemtype="https://schema.org/ListItem"
   >
-    <a expr:href="data:blog.homepageUrl.canonical" itemprop="item">
+    <a
+      expr:href="data:blog.homepageUrl.canonical"
+      expr:title="data:messages.home"
+      itemprop="item"
+    >
       <span itemprop="name"><data:messages.home /></span>
     </a>
     <meta content="1" itemprop="position" />
@@ -27,7 +31,11 @@
           itemscope="itemscope"
           itemtype="https://schema.org/ListItem"
         >
-          <a expr:href="data:label.url.canonical" itemprop="item">
+          <a
+            expr:href="data:label.url.canonical"
+            expr:title="data:label.name"
+            itemprop="item"
+          >
             <span itemprop="name"><data:label.name /></span>
           </a>
           <meta expr:content="data:num+2" itemprop="position" />
@@ -42,7 +50,11 @@
           itemscope="itemscope"
           itemtype="https://schema.org/ListItem"
         >
-          <a expr:href="data:label.url.canonical" itemprop="item">
+          <a
+            expr:href="data:label.url.canonical"
+            expr:title="data:label.name"
+            itemprop="item"
+          >
             <span itemprop="name"><data:label.name /></span>
           </a>
           <meta expr:content="data:num+2" itemprop="position" />

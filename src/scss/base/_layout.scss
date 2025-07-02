@@ -14,7 +14,7 @@
     padding: 2rem 0;
     align-items: center;
     @media #{v.$tablet} {
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2.5fr 0.6fr;
     }
     #Header1 {
       grid-column: 1 / 2;
@@ -45,6 +45,21 @@
           display: flex;
           gap: 1.25rem;
           flex-direction: row;
+        }
+        &:hover {
+          li {
+            a {
+              opacity: 0.5;
+            }
+          }
+        }
+        li {
+          a {
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+              opacity: 1;
+            }
+          }
         }
       }
       #toggle-menu {
@@ -101,7 +116,7 @@
         order: 1;
       }
       @media #{v.$tablet} {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 0.4fr;
         div:first-child {
           order: 1;
           text-align: left;

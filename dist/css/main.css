@@ -275,7 +275,7 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .mainWrapper #main-header {
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2.5fr 0.6fr;
   }
 }
 .mainWrapper #main-header #Header1 {
@@ -313,6 +313,15 @@ button {
     gap: 1.25rem;
     flex-direction: row;
   }
+}
+.mainWrapper #main-header #LinkList0 .main-menu-list:hover li a {
+  opacity: 0.5;
+}
+.mainWrapper #main-header #LinkList0 .main-menu-list li a {
+  transition: opacity 0.3s ease-in-out;
+}
+.mainWrapper #main-header #LinkList0 .main-menu-list li a:hover {
+  opacity: 1;
 }
 .mainWrapper #main-header #LinkList0 #toggle-menu:checked + .main-menu-list {
   display: flex;
@@ -369,7 +378,7 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .mainWrapper footer #LinkList1 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.4fr;
   }
   .mainWrapper footer #LinkList1 div:first-child {
     order: 1;
