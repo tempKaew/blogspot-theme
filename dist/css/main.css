@@ -300,7 +300,9 @@ button {
   }
 }
 .mainWrapper #main-header #LinkList0 .main-menu-list {
-  display: none;
+  max-height: 0;
+  display: flex;
+  overflow: hidden;
   gap: 1rem;
   place-items: center;
   width: 100%;
@@ -309,6 +311,7 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .mainWrapper #main-header #LinkList0 .main-menu-list {
+    max-height: unset;
     display: flex;
     gap: 1.25rem;
     flex-direction: row;
@@ -324,7 +327,7 @@ button {
   opacity: 1;
 }
 .mainWrapper #main-header #LinkList0 #toggle-menu:checked + .main-menu-list {
-  display: flex;
+  animation: slideDown 0.5s ease-in-out forwards;
 }
 .mainWrapper #main-header #HTML1 {
   grid-column: 2/3;
@@ -494,6 +497,22 @@ button {
   cursor: pointer;
 }
 
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 50vh;
+  }
+}
+@keyframes slideUp {
+  from {
+    max-height: 50vh;
+  }
+  to {
+    max-height: 0;
+  }
+}
 .card-title {
   font-family: var(--font-title-family);
   font-size: 1.125rem;
