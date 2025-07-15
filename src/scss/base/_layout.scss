@@ -114,6 +114,21 @@
       div:first-child {
         order: 2;
         text-align: center;
+        .policy {
+          margin-left: 0;
+          display: inline-flex;
+          gap: 0.5rem;
+          @media #{v.$tablet} {
+            margin-left: 0.5rem;
+          }
+          a {
+            font-size: 0.75rem;
+            color: var(--color-tertiary);
+            &:hover {
+              color: var(--color-white);
+            }
+          }
+        }
       }
       div:last-child {
         order: 1;

@@ -376,6 +376,23 @@ button {
   order: 2;
   text-align: center;
 }
+.mainWrapper footer #LinkList1 div:first-child .policy {
+  margin-left: 0;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .mainWrapper footer #LinkList1 div:first-child .policy {
+    margin-left: 0.5rem;
+  }
+}
+.mainWrapper footer #LinkList1 div:first-child .policy a {
+  font-size: 0.75rem;
+  color: var(--color-tertiary);
+}
+.mainWrapper footer #LinkList1 div:first-child .policy a:hover {
+  color: var(--color-white);
+}
 .mainWrapper footer #LinkList1 div:last-child {
   order: 1;
 }

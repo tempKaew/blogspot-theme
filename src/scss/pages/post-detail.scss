@@ -101,11 +101,26 @@
           }
         }
       }
-      ul {
+      ul,
+      ol {
+        display: block;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        padding-inline-start: 1.5rem;
+        unicode-bidi: isolate;
         margin-bottom: 2rem;
-        &:last-child {
-          margin-bottom: 0;
+        li {
+          margin-bottom: 0.5rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
+      }
+      ul {
+        list-style-type: disc;
+      }
+      ol {
+        list-style-type: decimal;
       }
       a {
         text-decoration: underline;
@@ -118,6 +133,11 @@
         font-weight: 400;
         font-style: normal;
         font-size: 0.8888889em;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid var(--bg-code);
+        margin: 2rem 0;
       }
       blockquote {
         background: var(--bg-code);

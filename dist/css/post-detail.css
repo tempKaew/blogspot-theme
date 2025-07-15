@@ -102,11 +102,28 @@
 #Blog1 .post .content pre .btn-copy-code:hover {
   opacity: 1;
 }
-#Blog1 .post .content ul {
+#Blog1 .post .content ul,
+#Blog1 .post .content ol {
+  display: block;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  padding-inline-start: 1.5rem;
+  unicode-bidi: isolate;
   margin-bottom: 2rem;
 }
-#Blog1 .post .content ul:last-child {
+#Blog1 .post .content ul li,
+#Blog1 .post .content ol li {
+  margin-bottom: 0.5rem;
+}
+#Blog1 .post .content ul li:last-child,
+#Blog1 .post .content ol li:last-child {
   margin-bottom: 0;
+}
+#Blog1 .post .content ul {
+  list-style-type: disc;
+}
+#Blog1 .post .content ol {
+  list-style-type: decimal;
 }
 #Blog1 .post .content a {
   text-decoration: underline;
@@ -119,6 +136,11 @@
   font-weight: 400;
   font-style: normal;
   font-size: 0.8888889em;
+}
+#Blog1 .post .content hr {
+  border: none;
+  border-top: 1px solid var(--bg-code);
+  margin: 2rem 0;
 }
 #Blog1 .post .content blockquote {
   background: var(--bg-code);
