@@ -4,14 +4,17 @@
   "module": "index.js",
   "type": "module",
   "scripts": {
-    "start": "hamlet --mode production --watch",
-    "build": "hamlet --mode production"
+    "dev": "bun preview/server.js",
+    "start": "bun preview/server.js",
+    "build": "hamlet --mode production",
+    "preview:check": "bun preview/expr.js && bun preview/selfcheck.js"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@xmldom/xmldom": "^0.9.12"
   },
   "dependencies": {
-    "hamlet-builder": "^1.0.20"
+    "hamlet-builder": "^1.8.0"
   },
   "theme": {
     "name": "tempKaew",

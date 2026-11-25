@@ -24,13 +24,15 @@ bun install
 
 ## Getting Started
 
-**Development**: Start a development server to watch for changes and automatically rebuild:
+**Development**: Start a local preview with sample posts. Saving a template, style, or script rebuilds the theme and reloads the browser. Sample titles and article HTML live in `preview/fixtures.js`.
 
 ```bash
-bun start
+bun run dev
 ```
 
-**Production**: Build the theme for production:
+Open http://127.0.0.1:4173. The bar at the bottom switches between the homepage, a post, a label, a page, and the 404 view.
+
+**Production**: Build the XML theme to import into Blogger. The file is written to `dist/tempKaew.xml`.
 
 ```bash
 bun run build

@@ -51,8 +51,7 @@ address {
 }
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -489,7 +488,6 @@ button {
   background: #fff;
   border-radius: 5px;
   padding: 1em;
-  height: -moz-fit-content;
   height: fit-content;
 }
 @media only screen and (min-width: 768px) {

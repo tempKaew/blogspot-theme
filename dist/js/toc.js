@@ -4,12 +4,14 @@
   document.addEventListener("DOMContentLoaded", function () {
     const mainWrapper = document.getElementById("mainWrapper");
     const blog1 = document.getElementById("Blog1");
+
     if (!mainWrapper) {
       return;
     }
     if (!blog1) {
       return;
     }
+
     const content = blog1.querySelector(".content");
     if (!content) {
       return;
@@ -18,41 +20,50 @@
     if (headings.length === 0) {
       return;
     }
+
     const tocDiv = document.createElement("div");
     tocDiv.id = "toc";
+
     const contentRect = content.getBoundingClientRect();
     const topPosition = contentRect.top + window.scrollY;
     tocDiv.style.marginTop = `${topPosition}px`;
+
     const body = document.body;
     tocDiv.style.height = `${body.scrollHeight - topPosition}px`;
+
     const tocContentDiv = document.createElement("div");
     tocContentDiv.id = "toc-content";
+
     const tocHeader = document.createElement("div");
     tocHeader.id = "toc-header";
+
     const tocTitle = document.createElement("h3");
     tocTitle.textContent = "Table of Contents";
     tocHeader.appendChild(tocTitle);
+
     const toTopButton = document.createElement("button");
     toTopButton.id = "to-top-button";
     toTopButton.textContent = "^ top";
     toTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
     tocHeader.appendChild(toTopButton);
     tocContentDiv.appendChild(tocHeader);
+
     const tocUl = document.createElement("ul");
     tocContentDiv.appendChild(tocUl);
+
     let currentLi;
+
     headings.forEach((heading, index) => {
       if (!heading.id) {
         heading.id = `heading-${index}`;
       }
+
       const link = document.createElement("a");
       link.href = `#${heading.id}`;
       link.textContent = heading.textContent;
+
       if (heading.tagName === "H2") {
         currentLi = document.createElement("li");
         currentLi.appendChild(link);
@@ -72,7 +83,9 @@
         tocUl.appendChild(li);
       }
     });
+
     tocDiv.appendChild(tocContentDiv);
+
     document.body.appendChild(tocDiv);
   });
 
