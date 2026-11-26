@@ -85,7 +85,10 @@
   flex: none;
   color: var(--accent);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-synthesis: none;
+  line-height: 1.2;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
