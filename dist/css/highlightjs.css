@@ -1,28 +1,29 @@
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 1em;
+  padding: 0;
+  background: transparent;
 }
 
 code.hljs {
-  padding: 3px 5px;
+  padding: 0;
 }
 
 .hljs {
-  color: #abb2bf;
-  background: #282c34;
+  color: #e2ded5;
+  background: transparent;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #5c6370;
+  color: #a8a49c;
   font-style: italic;
 }
 
 .hljs-doctag,
 .hljs-formula,
 .hljs-keyword {
-  color: #c678dd;
+  color: #f06543;
 }
 
 .hljs-deletion,
@@ -42,7 +43,7 @@ code.hljs {
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-  color: #98c379;
+  color: #ffb4a2;
 }
 
 .hljs-attr,

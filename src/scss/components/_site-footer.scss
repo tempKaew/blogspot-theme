@@ -1,0 +1,121 @@
+@use "../base/variables" as v;
+
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-base);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+
+  @media #{v.$tablet} {
+    padding-inline: 2rem;
+    text-align: left;
+  }
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 16rem;
+}
+
+.site-footer__name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+
+  @media #{v.$tablet} {
+    justify-content: flex-start;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+  }
+}
+
+.site-footer__copy {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem 1.15rem;
+  order: 3;
+
+  @media #{v.$desktop} {
+    flex: 1 1 auto;
+    order: 0;
+    justify-content: center;
+  }
+
+  a {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.social-list {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+
+  @media #{v.$tablet} {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-card);
+    color: var(--text-muted);
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &:hover {
+      color: var(--accent);
+      border-color: var(--border-badge);
+    }
+  }
+}

@@ -79,6 +79,7 @@ export const posts = [
     greet(name);
 }</code></pre>
       <p>After <code>greet</code> takes <code>name</code>, the caller cannot use it again.</p>
+      <a class="download" href="https://github.com/tempKaew/larust-app/releases/download/v1.0.0/larust-app.zip"><span>larust-app.zip<small>2.4 MB</small></span></a>
     `,
   }),
   article({

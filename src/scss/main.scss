@@ -2,5 +2,13 @@
 @use "base/root";
 @use "base/layout";
 
-@use "components/posts";
+@use "components/button";
+@use "components/badge";
+@use "components/section";
+@use "components/card";
+@use "components/terminal";
+@use "components/site-header";
+@use "components/site-footer";
+@use "components/pager";
+@use "components/hero";
 @use "components/theme-toggle";

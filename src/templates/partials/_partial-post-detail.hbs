@@ -1,34 +1,39 @@
 <b:with value="data:posts" var="posts">
   <b:loop index="i" values="data:posts" var="post">
-    <article class="post">
-
-      <header>
-
+    <article class="post article">
+      <header class="article__header">
         {{> partial-breadcrumbs}}
-
-        <h1 class="card-title">
-          <b:eval
-            expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
-          />
+        <div class="article__meta">
+          <b:if cond="data:post.labels">
+            <b:loop index="i" values="data:post.labels" var="label">
+              <b:if cond="data:i == 0">
+                <a class="badge badge--accent" expr:href="data:label.url.canonical"><data:label.name /></a>
+              </b:if>
+            </b:loop>
+          </b:if>
+          <span class="article__date"><data:post.date /></span>
+        </div>
+        <h1 class="article__title">
+          <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' />
         </h1>
-        <p class="post-meta">
-          <b:include name="iconCalendar" />
-          <data:post.date />
-        </p>
       </header>
-
       <div class="content">
         <data:post.body />
       </div>
-
+      <b:if cond="data:post.labels">
+        <div class="article__tags">
+          <span class="article__tags-label">หมวดหมู่</span>
+          <b:loop values="data:post.labels" var="label">
+            <a class="badge" expr:href="data:label.url.canonical"><data:label.name /></a>
+          </b:loop>
+        </div>
+      </b:if>
+      {{> partial-author}}
       <div class="post-related">
         <script type="text/javascript">
         const postCategories = [<b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'>&quot;<data:label.name/>&quot;<b:if cond='data:label.isLast != &quot;true&quot;'>,</b:if></b:loop></b:if>];
-        /*<![CDATA[*/{{asset
-            "dist/js/related_post.min.js"
-          }}/*]]>*/</script>
+        /*<![CDATA[*/{{asset "dist/js/related_post.min.js"}}/*]]>*/</script>
       </div>
-
     </article>
   </b:loop>
 </b:with>

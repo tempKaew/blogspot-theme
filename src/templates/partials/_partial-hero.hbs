@@ -1,0 +1,43 @@
+<section class="hero">
+  {{> partial-kicker text="tempkaew.dev / tech stack"}}
+  <div class="hero__title">
+    <data:content />
+  </div>
+  <p class="hero__lead"><span class="accent">Laravel</span>, <span class="accent">Rust</span>, and lessons learned along the way.</p>
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="https://tempkaew.blogspot.com/search/label/projects">Explore Projects</a>
+    <a class="btn btn--ghost" href="https://tempkaew.blogspot.com/search?max-results=8">Read Blog</a>
+  </div>
+  <div class="stat-strip stat-strip--3">
+    <div>
+      <span class="stat-strip__label">Web</span>
+      <span class="stat-strip__value">10+ yrs</span>
+    </div>
+    <div>
+      <span class="stat-strip__label">Workflow</span>
+      <span class="stat-strip__value">Docker</span>
+    </div>
+    <div>
+      <span class="stat-strip__label">Stack</span>
+      <span class="stat-strip__value">Rust + PHP</span>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="terminal__bar">
+      <span class="terminal__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="terminal__title">tempkaew@dev: ~/workspace</span>
+      <button class="terminal__copy" type="button" data-copy="xr run larust-app" aria-label="Copy command">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linejoin="round" stroke-width="1.6" d="M9 8v3a1 1 0 0 1-1 1H5m11 4h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-7a1 1 0 0 0-1 1v1m4 3v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-7.13a1 1 0 0 1 .24-.65L7.7 8.35A1 1 0 0 1 8.46 8H13a1 1 0 0 1 1 1Z"/></svg>
+      </button>
+    </div>
+    <div class="terminal__body">
+      <div class="terminal__line"><span class="tok-prompt">tempkaew@dev</span>:<span class="tok-path">~/workspace</span>$ <span class="tok-cmd">xr run larust-app</span></div>
+      <div class="terminal__line"><span class="tok-ok">✔</span> <span class="tok-muted">Detecting framework:</span> <span class="tok-cmd">Laravel 11 + Rust core</span></div>
+      <div class="terminal__line"><span class="tok-ok">✔</span> <span class="tok-muted">Docker Compose:</span> up (web, db, redis, worker)</div>
+      <div class="terminal__status">
+        <span><span class="tok-prompt">&gt;</span> <span class="tok-muted">Listening on</span> <span class="tok-prompt">127.0.0.1:8000</span></span>
+        <span class="badge">Ready in 42ms</span>
+      </div>
+    </div>
+  </div>
+</section>

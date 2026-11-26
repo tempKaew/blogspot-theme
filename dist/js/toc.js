@@ -38,7 +38,7 @@
     tocHeader.id = "toc-header";
 
     const tocTitle = document.createElement("h3");
-    tocTitle.textContent = "Table of Contents";
+    tocTitle.textContent = "สารบัญ";
     tocHeader.appendChild(tocTitle);
 
     const toTopButton = document.createElement("button");

@@ -27,7 +27,7 @@ function page(url) {
 }
 
 const home = page("/");
-check("home hero", home.includes("Exploring software development"));
+check("home hero", home.includes("career in code"));
 check("home recent", home.includes("Recent posts"));
 check("home first post", home.includes("Ownership in Rust"));
 check("home pager", home.includes("Older posts") && home.includes("/?page=2"));
@@ -52,7 +52,7 @@ const projects = page("/search/label/projects");
 check("projects title", projects.includes(">Projects<") || projects.includes("Projects"));
 check("projects cards", projects.includes("Hamlet widgets") && projects.includes("Local preview"));
 check("projects omit other posts", !projects.includes("Ownership in Rust") && !projects.includes("PHP generators"));
-check("projects omit hero", !projects.includes("Exploring software development"));
+check("projects omit hero", !projects.includes("career in code"));
 check("projects show images", projects.includes("data:image/svg+xml") && !projects.includes("no image"));
 
 const study = page("/search/label/studyLog");
@@ -75,7 +75,7 @@ check("post blog title is a link", /<h2>\s*<a [^>]*class="headerTitle"[^>]*>\s*t
 check("post home link", post.includes('itemprop="name">Home<'));
 check("post categories", post.includes("postCategories") && post.includes('"Rust"') && post.includes('"studyLog"'));
 check("post detail css", post.includes("#toc"));
-check("post omits hero", !post.includes("Exploring software development"));
+check("post omits hero", !post.includes("career in code"));
 
 const about = page("/p/about.html");
 check("about page", about.includes("sample data") && about.includes("<h2>This preview</h2>"));

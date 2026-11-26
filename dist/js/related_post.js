@@ -43,19 +43,36 @@
 
       const div = document.createElement("div");
       div.id = "blogger-related-posts";
-      div.innerHTML = "<h4>Related Posts</h4>";
+      div.className = "related";
 
-      const ul = document.createElement("ul");
+      const title = document.createElement("h3");
+      title.className = "related__title";
+      title.textContent = "บทความที่เกี่ยวข้อง";
+      div.appendChild(title);
+
+      const list = document.createElement("div");
+      list.className = "related__list";
       relatedPosts.forEach((post) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = post.link;
-        a.textContent = post.title;
-        li.appendChild(a);
-        ul.appendChild(li);
+        const link = document.createElement("a");
+        link.className = "related__link";
+        link.href = post.link;
+
+        const label = post.categories.find((name) => name !== "projects");
+        if (label) {
+          const meta = document.createElement("span");
+          meta.className = "related__meta";
+          meta.textContent = label;
+          link.appendChild(meta);
+        }
+
+        const name = document.createElement("span");
+        name.className = "related__name";
+        name.textContent = post.title;
+        link.appendChild(name);
+        list.appendChild(link);
       });
 
-      div.appendChild(ul);
+      div.appendChild(list);
 
       const blogContent = document.getElementById("Blog1");
       blogContent.appendChild(div);

@@ -1,56 +1,67 @@
-<h2>
-  <b:if cond="data:view.isSingleItem or data:view.isHomepage">
-    Recent posts
-    <b:elseif cond="data:view.isSearch" />
-    <b:if cond="data:view.search.label">
-      <b:eval expr='"Articles tag : " + data:view.search.label.escaped' />
-      <b:elseif cond="data:view.search.query" />
-      <b:eval expr='"ผลการค้นหา : " + data:view.search.query.escaped' />
+<b:if cond="data:view.isHomepage">
+  <header class="section-head">
+    <div>
+      {{> partial-kicker text="TECHNICAL LOGS"}}
+      <h2 class="section-head__title">Recent posts</h2>
+      <p class="section-head__desc">Daily engineering logs, Docker workflows, browser scrapers, and tooling.</p>
+    </div>
+    <a class="section-head__more" href="https://tempkaew.blogspot.com/search?max-results=8">ดูทั้งหมด</a>
+  </header>
+  <b:else />
+  <header class="page-hero">
+    <b:if cond='data:view.isSearch and data:view.search.label == "" and data:view.search.query == ""'>
+      {{> partial-kicker text="TECHNICAL WRITING"}}
+      <h2 class="page-hero__title">Blog &amp; Technical Notes</h2>
+      <p class="page-hero__desc">บันทึกการเรียนรู้ สรุปเทคนิค Laravel, Docker, Rust และเครื่องมือสำหรับ Web Engineer</p>
+      <div class="stat-strip">
+        <div>
+          <span class="stat-strip__label">Frameworks</span>
+          <span class="stat-strip__value">PHP / Rust</span>
+        </div>
+        <div>
+          <span class="stat-strip__label">Containers</span>
+          <span class="stat-strip__value stat-strip__value--accent">Dockerized</span>
+        </div>
+      </div>
+      {{> partial-chips set="blog"}}
       <b:else />
-      Blog
+      {{> partial-kicker text="ARCHIVE"}}
+      <h2 class="page-hero__title">
+        <b:if cond="data:view.search.label">
+          <b:eval expr='"Articles tag : " + data:view.search.label.escaped' />
+          <b:elseif cond="data:view.search.query" />
+          <b:eval expr='"ผลการค้นหา : " + data:view.search.query.escaped' />
+          <b:else />
+          Blog
+        </b:if>
+      </h2>
     </b:if>
-  </b:if>
-</h2>
+  </header>
+</b:if>
 <div class="posts">
-  <b:with
-    value="data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts"
-    var="posts"
-  >
-    <b:loop index="i" values="data:posts" var="post">
-      <article class="post">
-        <div class="bg-hover"></div>
+  <b:loop index="i" values="data:posts" var="post">
+    <article class="card post-card post">
+      <div class="post-card__date">
+        <b:include name="iconCalendar" />
+        <span><data:post.date /></span>
+      </div>
+      <b:if cond="data:post.labels">
+        <div class="post-card__tags">
+          <b:loop index="i" values="data:post.labels" var="label">
+            <b:if cond='data:label.name != "projects" and data:i lt 3'>
+              <a class="badge" expr:href="data:label.url.canonical"><data:label.name /></a>
+            </b:if>
+          </b:loop>
+        </div>
+      </b:if>
+      <h3 class="post-card__title">
         <a expr:href="data:post.url">
-          <h3 class="card-title">
-            <b:eval
-              expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
-            />
-          </h3>
+          <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' />
         </a>
-        <div class="post-excerpt">
-          <data:post.snippets.short />
-        </div>
-        <div class="post-meta">
-          <b:include name="iconCalendar" />
-          <span>
-            <data:post.date />
-          </span>
-          <b:if cond="data:post.labels">
-            <div class="post-labels">
-              <b:include name="iconTags" />
-              <div class="post-labels-list">
-                <b:loop index="i" values="data:post.labels" var="label">
-                  <b:if cond='data:label.name != "projects" and data:i lt 2'>
-                    <span class="label">
-                      <data:label.name />
-                    </span>
-                  </b:if>
-                </b:loop>
-              </div>
-            </div>
-          </b:if>
-        </div>
-      </article>
-    </b:loop>
-  </b:with>
+      </h3>
+      <p class="post-card__excerpt"><data:post.snippets.short /></p>
+      <a class="post-card__more" expr:href="data:post.url">อ่านต่อ<span aria-hidden="true">&#8594;</span></a>
+    </article>
+  </b:loop>
 </div>
 <b:include name="nextPrev" />

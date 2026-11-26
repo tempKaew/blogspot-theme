@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer class="site-footer" id="footer">
   <b:section
     id="main-footer"
     cond="!data:view.isLayoutMode"
@@ -38,62 +38,46 @@
         >https://leetcode.com/u/tempkaew/</b:widget-setting>
       </b:widget-settings>
       <b:includable id="main">
-        <div>
-          &#169;
-          <span id="getYear">{{currentYear}}</span>
-          &#8231;
-          <a expr:href="data:blog.homepageUrl.canonical"><data:blog.title
-            /></a>. All rights reserved.
-          <div class="policy">
-            <a href="https://tempkaew.blogspot.com/p/cookie-policy.html">Cookie
-              Policy</a>
-            <a
-              href="https://tempkaew.blogspot.com/p/privacy-policy.html"
-            >Privacy Policy</a>
+        <div class="site-footer__inner">
+          <div class="site-footer__brand">
+            <div class="site-footer__name">
+              <a expr:href="data:blog.homepageUrl.canonical"><data:blog.title /></a>
+              <span class="badge">v1.0</span>
+            </div>
+            <p class="site-footer__copy">&#169; {{currentYear}} tempKAEW. Crafted for modern web engineering.</p>
           </div>
-        </div>
-        <div>
-          <ul
-            class="main-menu-list"
-            itemscope="itemscope"
-            itemtype="https://schema.org/SiteNavigationElement"
-          >
+          <nav class="site-footer__nav" aria-label="Footer">
+            <a href="https://tempkaew.blogspot.com/p/about.html">About</a>
+            <a href="https://tempkaew.blogspot.com/search/label/projects">Projects</a>
+            <a href="https://tempkaew.blogspot.com/search?max-results=8">Blog</a>
+            <a href="https://tempkaew.blogspot.com/search/label/studyLog">StudyLog</a>
+            <a href="https://tempkaew.blogspot.com/p/privacy-policy.html">Privacy Policy</a>
+            <a href="https://tempkaew.blogspot.com/p/cookie-policy.html">Terms</a>
+          </nav>
+          <ul class="social-list">
             <b:loop values="data:links" var="link">
-              <b:if cond="data:link.name == &quot;BreakLine&quot;">
-                <li class="break" />
-                <b:else />
-                <li>
-                  <a
-                    class="link"
-                    expr:href="data:link.target"
-                    itemprop="url"
-                    target="_blank"
-                    expr:title="data:link.name"
-                  >
-                    <b:if cond="data:link.name == &quot;FacebookPage&quot;">
-                      <b:include name="iconFacebook" />
-                    </b:if>
-                    <b:if cond="data:link.name == &quot;Github&quot;">
-                      <b:include name="iconGithub" />
-                    </b:if>
-                    <b:if cond="data:link.name == &quot;CodePen&quot;">
-                      <b:include name="iconCodePen" />
-                    </b:if>
-                    <b:if cond="data:link.name == &quot;LinkedIn&quot;">
-                      <b:include name="iconLinkedIn" />
-                    </b:if>
-                    <b:if cond="data:link.name == &quot;LeetCode&quot;">
-                      <b:include name="iconLeetCode" />
-                    </b:if>
-                  </a>
-                </li>
-              </b:if>
+              <li>
+                <a expr:href="data:link.target" expr:title="data:link.name" target="_blank" rel="noopener noreferrer">
+                  <b:if cond="data:link.name == &quot;FacebookPage&quot;">
+                    <b:include name="iconFacebook" />
+                  </b:if>
+                  <b:if cond="data:link.name == &quot;Github&quot;">
+                    <b:include name="iconGithub" />
+                  </b:if>
+                  <b:if cond="data:link.name == &quot;CodePen&quot;">
+                    <b:include name="iconCodePen" />
+                  </b:if>
+                  <b:if cond="data:link.name == &quot;LinkedIn&quot;">
+                    <b:include name="iconLinkedIn" />
+                  </b:if>
+                  <b:if cond="data:link.name == &quot;LeetCode&quot;">
+                    <b:include name="iconLeetCode" />
+                  </b:if>
+                </a>
+              </li>
             </b:loop>
             <li>
-              <a
-                href="https://tempkaew.blogspot.com/feeds/posts/default?alt=rss"
-                target="_blank"
-              >
+              <a href="https://tempkaew.blogspot.com/feeds/posts/default?alt=rss" target="_blank" rel="noopener noreferrer" title="RSS">
                 <b:include name="iconFreed" />
               </a>
             </li>

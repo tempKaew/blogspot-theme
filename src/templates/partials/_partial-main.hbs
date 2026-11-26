@@ -1,11 +1,10 @@
 <b:section id="content" class="container">
   <b:widget id="HTML0" locked="true" title="Heroes" type="HTML" visible="true" cond="data:view.isHomepage">
     <b:widget-settings>
-      <b:widget-setting name="content"><![CDATA[<h2>Exploring software development
-with PHP, JavaScript, Rust, and beyond.</h2>]]></b:widget-setting>
+      <b:widget-setting name="content"><![CDATA[<h2>Hi, I'm <span class="accent accent--rule">Kaew</span>.</h2><p class="hero__story">I left <span class="accent accent--rule">construction sites</span> for a career in code, though honestly I never really <span class="accent accent--rule">left code</span> at all.</p>]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id="main">
-      <data:content />
+      {{> partial-hero}}
     </b:includable>
     {{! <b:includable id="content" /> }}
   </b:widget>

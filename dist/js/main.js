@@ -3,34 +3,50 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggle-theme");
+    const root = document.documentElement;
 
-    function updateAriaLabel() {
-      const isLightMode =
-        document.firstElementChild.getAttribute("data-theme") === "light";
-      toggleButton.setAttribute(
-        "aria-label",
-        isLightMode ? "Switch to dark mode" : "Switch to light mode",
-      );
+    if (toggleButton) {
+      const updateAriaLabel = () => {
+        const isLightMode = root.getAttribute("data-theme") === "light";
+        toggleButton.setAttribute(
+          "aria-label",
+          isLightMode ? "Switch to dark mode" : "Switch to light mode",
+        );
+      };
+
+      toggleButton.addEventListener("click", () => {
+        const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", next);
+        updateAriaLabel();
+      });
+
+      updateAriaLabel();
     }
 
-    toggleButton.addEventListener("click", () => {
-      const currentTheme = document.firstElementChild.getAttribute("data-theme");
-      const newTheme = currentTheme === "light" ? "dark" : "light";
-      document.firstElementChild.setAttribute("data-theme", newTheme);
-      updateAriaLabel();
+    const searchInput = document.getElementById("searchInput");
+    document.addEventListener("keydown", (event) => {
+      if (!searchInput || event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) {
+        return;
+      }
+      const tag = document.activeElement?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable) {
+        return;
+      }
+      event.preventDefault();
+      searchInput.focus();
     });
 
-    updateAriaLabel();
-
-    const modalCheckbox = document.getElementById("modal-search");
-    const searchInput = document.getElementById("searchInput");
-
-    modalCheckbox.addEventListener("change", function () {
-      if (this.checked) {
-        setTimeout(() => {
-          searchInput.focus();
-        }, 10);
-      }
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const value = button.getAttribute("data-copy") || "";
+        try {
+          await navigator.clipboard.writeText(value);
+          button.setAttribute("data-copied", "true");
+          window.setTimeout(() => button.removeAttribute("data-copied"), 1600);
+        } catch (error) {
+          console.error(error);
+        }
+      });
     });
   });
 

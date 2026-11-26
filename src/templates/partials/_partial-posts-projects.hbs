@@ -1,51 +1,50 @@
-<h2>
-  Projects
-</h2>
+<header class="page-hero">
+  {{> partial-kicker text="PORTFOLIO / OPEN SOURCE"}}
+  <h2 class="page-hero__title">Projects</h2>
+  <p class="page-hero__desc">โปรเจกต์ เครื่องมือ และ boilerplate ที่สร้างขึ้นเพื่อแก้ปัญหาจริง แล้วเปิดให้คนอื่นเอาไปใช้ต่อ</p>
+  <div class="stat-strip">
+    <div>
+      <span class="stat-strip__label">Stack</span>
+      <span class="stat-strip__value">Rust &amp; PHP</span>
+    </div>
+    <div>
+      <span class="stat-strip__label">Workflow</span>
+      <span class="stat-strip__value stat-strip__value--accent">Docker</span>
+    </div>
+  </div>
+  {{> partial-chips set="projects"}}
+</header>
 <div class="posts">
-  <b:with
-    value="data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts"
-    var="posts"
-  >
-    <b:loop index="i" values="data:posts" var="post">
-      <article class="post">
-        <div class="post-content">
-
-          <a expr:href="data:post.url">
-            <h3 class="card-title">
-              <b:eval
-                expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle'
-              />
-            </h3>
-          </a>
-
-          <div class="post-excerpt">
-            <data:post.snippets.short />
-          </div>
-
-          <div class="post-labels">
+  <b:loop index="i" values="data:posts" var="post">
+    <article class="card project-card post">
+      <a class="project-card__media" expr:href="data:post.url">
+        <b:if cond="data:post.featuredImage">
+          <img expr:src="data:post.featuredImage" expr:alt="data:post.title.escaped" loading="lazy" />
+          <b:else />
+          <span class="project-card__placeholder"></span>
+        </b:if>
+      </a>
+      <div class="project-card__body">
+        <b:if cond="data:post.labels">
+          <div class="project-card__tags">
             <b:loop index="i" values="data:post.labels" var="label">
               <b:if cond='data:label.name != "projects"'>
-                <span class="label">
-                  <data:label.name />
-                </span>
+                <a class="badge" expr:href="data:label.url.canonical"><data:label.name /></a>
               </b:if>
             </b:loop>
           </div>
-
+        </b:if>
+        <h3 class="project-card__title">
+          <a expr:href="data:post.url">
+            <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' />
+          </a>
+        </h3>
+        <p class="project-card__excerpt"><data:post.snippets.short /></p>
+        <div class="project-card__foot">
+          <a class="btn btn--ghost btn--sm" expr:href="data:post.url">อ่านบทความ</a>
         </div>
-        <div class="post-image">
-          <b:if cond="data:post.featuredImage">
-            <img
-              expr:src="data:post.featuredImage"
-              expr:alt="data:post.title.escaped"
-              loading="lazy"
-            />
-            <b:else />
-            no image
-          </b:if>
-        </div>
-      </article>
-    </b:loop>
-  </b:with>
+      </div>
+    </article>
+  </b:loop>
 </div>
 <b:include name="nextPrev" />
