@@ -180,7 +180,6 @@
       <link href="//pagead2.googlesyndication.com" rel="dns-prefetch" />
       <link href="//www.googletagmanager.com" rel="dns-prefetch" />
       <link href="//www.google-analytics.com" rel="dns-prefetch" />
-      <link href="https://fonts.googleapis.com" rel="preconnect" />
       <link
         crossorigin="anonymous"
         href="https://fonts.gstatic.com"
@@ -194,42 +193,6 @@
         crossorigin="anonymous"
         href="https://fonts.gstatic.com/s/baijamjuree/v13/LDI1apSCOBt_aeQQ7ftydoa8XsLLubg58w.woff2"
       />
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        fetchpriority="low"
-        crossorigin="anonymous"
-        href="https://fonts.gstatic.com/s/baijamjuree/v13/LDIqapSCOBt_aeQQ7ftydoa05efelJo02SuCgQ.woff2"
-      />
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        fetchpriority="low"
-        crossorigin="anonymous"
-        href="https://fonts.gstatic.com/s/baijamjuree/v13/LDIqapSCOBt_aeQQ7ftydoa05efegJo02SuCgcva.woff2"
-      />
-      <link
-        rel="preload"
-        as="font"
-        type="font/woff2"
-        fetchpriority="low"
-        crossorigin="anonymous"
-        href="https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOVk6OThhvA.woff2"
-      />
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&amp;family=JetBrains+Mono:wght@400&amp;display=optional"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'"
-      />
-      <noscript>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&amp;family=JetBrains+Mono:wght@400&amp;display=optional"
-        />
-      </noscript>
     
     </b:if>
 
