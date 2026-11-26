@@ -18,26 +18,38 @@
 }
 
 .kicker__mark {
+  position: relative;
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(240, 101, 67, 0.55);
-  animation: kicker-pulse 1.8s ease-out infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--accent);
+    animation: kicker-pulse 1.8s ease-out infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kicker__mark {
+  .kicker__mark::after {
     animation: none;
   }
 }
 
 @keyframes kicker-pulse {
-  70% {
-    box-shadow: 0 0 0 6px rgba(240, 101, 67, 0);
+  0% {
+    opacity: 0.65;
+    transform: scale(1);
   }
+
+  70%,
   100% {
-    box-shadow: 0 0 0 0 rgba(240, 101, 67, 0);
+    opacity: 0;
+    transform: scale(2.8);
   }
 }
 

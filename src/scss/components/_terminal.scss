@@ -4,6 +4,7 @@
   border-radius: var(--radius-card);
   background: var(--surface-terminal);
   box-shadow: 0 8px 32px -4px rgba(240, 101, 67, 0.12);
+  font-synthesis: none;
 }
 
 .terminal__bar {
@@ -63,11 +64,21 @@
 }
 
 .terminal__body {
-  padding: 0.9rem 1rem 1rem;
+  padding: 0.9rem 0.7rem 1rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-inline: 1rem;
+  }
   font-family: var(--font-mono);
   font-size: 0.75rem;
   line-height: 1.65;
   color: var(--badge-text);
+}
+
+.terminal__line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .terminal__line + .terminal__line {
@@ -84,7 +95,7 @@
 
 .tok-cmd {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tok-ok {
@@ -104,4 +115,10 @@
   padding-top: 0.65rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.6875rem;
+  white-space: nowrap;
+
+  span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

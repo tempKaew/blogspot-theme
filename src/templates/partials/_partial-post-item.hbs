@@ -60,7 +60,7 @@
         </a>
       </h3>
       <p class="post-card__excerpt"><data:post.snippets.short /></p>
-      <a class="post-card__more" expr:href="data:post.url">อ่านต่อ<span aria-hidden="true">&#8594;</span></a>
+      <a class="post-card__more" expr:href="data:post.url">อ่านต่อ<span class="visually-hidden"> <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' /></span><span aria-hidden="true">&#8594;</span></a>
     </article>
   </b:loop>
 </div>

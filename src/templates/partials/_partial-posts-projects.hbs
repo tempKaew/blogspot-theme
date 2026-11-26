@@ -41,7 +41,7 @@
         </h3>
         <p class="project-card__excerpt"><data:post.snippets.short /></p>
         <div class="project-card__foot">
-          <a class="btn btn--ghost btn--sm" expr:href="data:post.url">อ่านบทความ</a>
+          <a class="btn btn--ghost btn--sm" expr:href="data:post.url">อ่านบทความ<span class="visually-hidden"> <b:eval expr='data:post.title.escaped != "" ? data:post.title.escaped : data:messages.noTitle' /></span></a>
         </div>
       </div>
     </article>

@@ -37,11 +37,13 @@
       {{!-- [ Header section ] --}}
       {{> partial-header}}
 
-      <b:if cond='!data:view.isError'>
-        {{> partial-main}}
-      <b:else/>
-        {{> partial-error}}
-      </b:if>
+      <main id="main">
+        <b:if cond='!data:view.isError'>
+          {{> partial-main}}
+        <b:else/>
+          {{> partial-error}}
+        </b:if>
+      </main>
 
       {{> partial-footer}}
     </b:tag>

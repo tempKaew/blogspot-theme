@@ -5,6 +5,14 @@
   width: 100%;
 }
 
+#main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
 .container {
   width: 100%;
   max-width: var(--container);

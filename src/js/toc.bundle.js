@@ -21,13 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const tocDiv = document.createElement("div");
   tocDiv.id = "toc";
 
-  const contentRect = content.getBoundingClientRect();
-  const topPosition = contentRect.top + window.scrollY;
-  tocDiv.style.marginTop = `${topPosition}px`;
-
-  const body = document.body;
-  tocDiv.style.height = `${body.scrollHeight - topPosition}px`;
-
   const tocContentDiv = document.createElement("div");
   tocContentDiv.id = "toc-content";
 
@@ -83,5 +76,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   tocDiv.appendChild(tocContentDiv);
 
-  document.body.appendChild(tocDiv);
+  blog1.appendChild(tocDiv);
 });

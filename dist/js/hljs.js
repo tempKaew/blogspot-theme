@@ -31,8 +31,7 @@
           copyButton.onclick = () => {
             navigator.clipboard.writeText(text).then(() => {
               copyButton.classList.remove("is-copied");
-              void copyButton.offsetWidth;
-              copyButton.classList.add("is-copied");
+              requestAnimationFrame(() => copyButton.classList.add("is-copied"));
               setName("Copied");
               window.clearTimeout(copiedTimer);
               copiedTimer = window.setTimeout(() => {

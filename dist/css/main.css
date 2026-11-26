@@ -231,7 +231,7 @@ video {
   --radius-xl: 0.75rem;
   --radius-card: 0.625rem;
   --font-sans: "Bai Jamjuree", "Adjusted Arial Fallback", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: "JetBrains Mono", "Adjusted Mono Fallback", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-bai: var(--font-sans);
   --container: 42.5rem;
   --page-max: 80rem;
@@ -263,12 +263,36 @@ video {
 }
 
 @font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/baijamjuree/v13/LDI1apSCOBt_aeQQ7ftydoa8XsLL.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/baijamjuree/v13/LDIqapSCOBt_aeQQ7ftydoa05efelJo0.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
   font-family: "Adjusted Arial Fallback";
   src: local(Arial);
-  size-adjust: 100%;
-  ascent-override: 94%;
-  descent-override: 13%;
-  line-gap-override: 6%;
+  size-adjust: 105%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Adjusted Mono Fallback";
+  src: local("Courier New");
+  size-adjust: 88%;
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
 }
 html {
   scroll-behavior: smooth;
@@ -328,6 +352,14 @@ h4 {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+}
+
+#main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
 }
 
 .container {
@@ -498,25 +530,34 @@ a.badge:hover {
 }
 
 .kicker__mark {
+  position: relative;
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(240, 101, 67, 0.55);
+}
+.kicker__mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
   animation: kicker-pulse 1.8s ease-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kicker__mark {
+  .kicker__mark::after {
     animation: none;
   }
 }
 @keyframes kicker-pulse {
-  70% {
-    box-shadow: 0 0 0 6px rgba(240, 101, 67, 0);
+  0% {
+    opacity: 0.65;
+    transform: scale(1);
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(240, 101, 67, 0);
+  70%, 100% {
+    opacity: 0;
+    transform: scale(2.8);
   }
 }
 .section-head {
@@ -767,6 +808,7 @@ a.badge:hover {
   border-radius: var(--radius-card);
   background: var(--surface-terminal);
   box-shadow: 0 8px 32px -4px rgba(240, 101, 67, 0.12);
+  font-synthesis: none;
 }
 
 .terminal__bar {
@@ -821,11 +863,24 @@ a.badge:hover {
 }
 
 .terminal__body {
-  padding: 0.9rem 1rem 1rem;
+  padding: 0.9rem 0.7rem 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .terminal__body {
+    padding-inline: 1rem;
+  }
+}
+.terminal__body {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   line-height: 1.65;
   color: var(--badge-text);
+}
+
+.terminal__line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .terminal__line + .terminal__line {
@@ -842,7 +897,7 @@ a.badge:hover {
 
 .tok-cmd {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tok-ok {
@@ -862,6 +917,11 @@ a.badge:hover {
   padding-top: 0.65rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.6875rem;
+  white-space: nowrap;
+}
+.terminal__status span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .site-header {
@@ -1278,7 +1338,7 @@ a.badge:hover {
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.45;
 }
@@ -1293,7 +1353,7 @@ a.badge:hover {
   color: var(--text-muted);
   font-family: var(--font-sans);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
 }
 

@@ -479,6 +479,10 @@
     transform: none;
   }
 }
+#Blog1 {
+  position: relative;
+}
+
 #toc {
   display: none;
 }
@@ -487,8 +491,9 @@
     display: block;
     position: absolute;
     top: 0;
-    left: calc((100% - 42.5rem) / 2 + 42.5rem + 1.5rem);
+    left: calc(100% + 1.5rem);
     width: 16rem;
+    height: 100%;
     z-index: 3;
   }
 }
